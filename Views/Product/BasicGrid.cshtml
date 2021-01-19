@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "BasicGrid";
+}
+
+<h2>BasicGrid</h2>
+
+
+@(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.ProductViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.ProductName);
+          columns.Bound(c => c.SupplierID);
+          columns.Bound(c => c.CategoryID);
+          columns.Bound(c => c.QuantityPerUnit);
+          columns.Bound(c => c.UnitPrice);
+          columns.Bound(c => c.UnitsInStock);
+          columns.Bound(c => c.UnitsOnOrder);
+          columns.Bound(c => c.ReorderLevel);
+          columns.Bound(c => c.Discontinued);
+      })
+      .Scrollable()
+      .Pageable()
+      .Height(650)
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Read(read => read.Action("Products_Read", "Product"))
+      )
+)
