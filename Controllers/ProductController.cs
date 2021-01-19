@@ -12,6 +12,7 @@ using TelerikMvcTraining.Models;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using TelerikMvcTraining.ViewModels;
+using TelerikMvcTraining.Data.Repositories;
 
 namespace TelerikMvcTraining.Controllers
 {
@@ -27,20 +28,7 @@ namespace TelerikMvcTraining.Controllers
 
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
-
-            var result = Enumerable.Range(0, 50).Select(i => new ProductViewModel
-            {
-                ProductID = i,
-                SupplierID = i + 1,
-                ProductName = "SamsungTablet" + "  A." + (i*2),
-                UnitPrice = i + 25,
-                Discontinued = false,
-                CategoryID = i + 2,
-                QuantityPerUnit = (i + 10).ToString(),
-                UnitsInStock = (uint?)(i + 3),
-                UnitsOnOrder = (uint?)(i + 4),
-                ReorderLevel = (uint?)(i + 20)
-            });
+            var result = new ProductRepository(db).GetAllProducts();
 
             return Json(result.ToDataSourceResult(request));
         }
