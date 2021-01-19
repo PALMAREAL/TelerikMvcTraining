@@ -26,6 +26,11 @@ namespace TelerikMvcTraining.Controllers
             return View();
         }
 
+        public ActionResult AdvancedGrid()
+        {
+            return View();
+        }
+
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
             var result = new ProductRepository(db).GetAllProducts();

@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "AdvancedGrid";
+}
+
+<style>
+    .product-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .product-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>
+
+
+<h2>AdvancedGrid</h2>
+
+
+@(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.ProductViewModel>()
+      .Name("grid")
+      .ToolBar(tools => tools.Search())
+      .ToolBar(tools => tools.Excel())
+      .Excel(excel => excel
+            .FileName("ProductExcelExport.xlsx")
+            .Filterable(true)
+            .ProxyURL(Url.Action("Excel_Export_Save", "Grid")))
+      .ToolBar(tools => tools.Pdf())
+      .Pdf(pdf => pdf
+            .AllPages()
+            .AvoidLinks()
+            .PaperSize("A4")
+            .Scale(0.8)
+            .Margin("2cm", "1cm", "1cm", "1cm")
+            .Landscape()
+            .RepeatHeaders()
+            .TemplateId("page-template")
+            .FileName("ProductPdfExport.pdf")
+            .ProxyURL(Url.Action("Pdf_Export_Save", "Grid")))
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.ProductName).ClientTemplate(
+                @"<div class='product-photo' 
+                    style='background-image: url(" + @Url.Content("~/Content/img/Products/#:data.ProductID#.jpg") +
+                    ");'></div><div class='product-name'> &nbsp&nbsp #: ProductName #</div>")
+              .Width(340);
+          columns.Bound(c => c.SupplierID);
+          columns.Bound(c => c.CategoryID);
+          columns.Bound(c => c.QuantityPerUnit);
+          columns.Bound(c => c.UnitPrice);
+          columns.Bound(c => c.UnitsInStock);
+          columns.Bound(c => c.UnitsOnOrder);
+          columns.Bound(c => c.ReorderLevel);
+          columns.Bound(c => c.Discontinued);
+      })
+       .HtmlAttributes(new { style = "height: 720px;" })
+       .Scrollable()
+       .Groupable()
+       .Sortable()
+       .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Read(read => read.Action("Products_Read", "Product"))
+          .PageSize(20)
+      )
+)
