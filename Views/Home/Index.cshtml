@@ -3,38 +3,87 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead text-muted">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="k-button k-primary">Learn more &raquo;</a></p>
+    <h5>TELERIK-MVC-TRAINING</h5>
+    <p class="lead text-muted">TelerikMvcTraining is a MVC web app to practice the most popular componets from Telerik library.</p>
+    <p><a href="https://demos.telerik.com/aspnet-mvc?_ga=2.164112383.1524206460.1609935354-1862268976.1609670797" class="k-button k-primary">Learn more &raquo;</a></p>
 </div>
 
-@(Html.Kendo().PanelBar()
-    .Name("IntroPanelBar")
-    .Items(items =>
-    {
-        items.Add()
-            .Text("Getting Started")
-            .Selected(true)
-            .Expanded(true)
-            .Content(@<text>
+<div class="row mb-3">
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                Grid
+            </div>
+            <div class="k-card-body">
                 <p>
-                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                    enables a clean separation of concerns and gives you full control over markup
-                    for enjoyable, agile development.
+                    The Grid allows users to browser, edit, filter, group, sort, select, and export tabular data.
                 </p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
-            </text>);
-        items.Add()
-            .Text("Get more libraries")
-            .Content(@<text>
-                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
-            </text>);
-        items.Add()
-            .Text("Web Hosting")
-            .Content(@<text>
-                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
-            </text>);
-    })
-)
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Product")</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                Chart
+            </div>
+            <div class="k-card-body">
+                <p>The Charts allow users to visualise and output graphical representations of data.</p>
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicChart", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedChart", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Product")</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                Sheduler
+            </div>
+            <div class="k-card-body">
+                <p>The Scheduler allows users to view and edit their event calendar.</p>
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Product")</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                DropDownList
+            </div>
+            <div class="k-card-body">
+                <p>The DropDownList allows users to single select a single value from a predefined list.</p>
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDropdown", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "CascadingDropDownList", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Product")</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                DateRangePicker
+            </div>
+            <div class="k-card-body">
+                <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Product")</span>
+            </div>
+        </div>
+    </div>
+</div>
