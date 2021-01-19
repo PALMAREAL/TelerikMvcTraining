@@ -288,6 +288,7 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Product\BasicGrid.cshtml" />
     <Content Include="Views\Product\AdvancedGrid.cshtml" />
+    <None Include="Properties\PublishProfiles\TelerikTraining - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
