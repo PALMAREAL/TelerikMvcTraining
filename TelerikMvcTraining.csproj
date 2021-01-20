@@ -294,15 +294,13 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
-    <Content Include="Views\Customer\Create.cshtml" />
-    <Content Include="Views\Customer\Delete.cshtml" />
-    <Content Include="Views\Customer\Details.cshtml" />
-    <Content Include="Views\Customer\Edit.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Product\BasicGrid.cshtml" />
     <Content Include="Views\Product\AdvancedGrid.cshtml" />
     <None Include="Properties\PublishProfiles\TelerikTraining - Web Deploy.pubxml" />
     <Content Include="Views\Product\ProGrid.cshtml" />
+    <Content Include="Views\Customer\BasicChart.cshtml" />
+    <Content Include="Views\Customer\AdvancedChart.cshtml" />
+    <Content Include="Views\Customer\ProChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
