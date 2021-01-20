@@ -11,41 +11,73 @@ namespace TelerikMvcTraining.ViewModels
     {
         private int? targetSales;
 
-        public int ProductID { get; set; }
+        public int ProductID
+        {
+            get;
+            set;
+        }
 
-        [Required(ErrorMessage = "{0} is required.")]
-        [StringLength(50, MinimumLength = 1, ErrorMessage = " The Name should be a maximum of 50 characters")]
-        [Display(Name = "Name")]
-        public string ProductName { get; set; }
+        [Required]
+        [Display(Name = "Product name")]
+        public string ProductName
+        {
+            get;
+            set;
+        }
 
-        [Display(Name = "Supplier")]
-        public int? SupplierID { get; set; }
+        [Display(Name = "Unit price")]
+        [DataType(DataType.Currency)]
+        [Range(0, int.MaxValue)]
+        public decimal UnitPrice
+        {
+            get;
+            set;
+        }
 
-        [Display(Name = "Category")]
+        [Display(Name = "Units in stock")]
+        [DataType("Integer")]
+        [Range(0, int.MaxValue)]
+        public int UnitsInStock
+        {
+            get;
+            set;
+        }
+
+        public bool Discontinued
+        {
+            get;
+            set;
+        }
+
+        [Display(Name = "Last supply")]
+        [DataType(DataType.Date)]
+        public DateTime LastSupply
+        {
+            get;
+            set;
+        }
+
+        [DataType("Integer")]
+        public int UnitsOnOrder
+        {
+            get;
+            set;
+        }
+        public CategoryViewModel Category
+        {
+            get;
+            set;
+        }
+
         public int? CategoryID { get; set; }
 
-        public Category Category { get; set; }
+        public int? CountryID { get; set; }
 
-        public Country Country { get; set; }
-
-        [Required(ErrorMessage = "{0} is required.")]
         public string QuantityPerUnit { get; set; }
 
-        [Display(Name = "Price")]
-        public decimal? UnitPrice { get; set; }
-
-        [Display(Name = "In Stock")]
-        public uint? UnitsInStock { get; set; }
-
-        [Display(Name = "Units on order")]
-        public uint? UnitsOnOrder { get; set; }
+        public CountryViewModel Country { get; set; }
 
         public byte? CustomerRating { get; set; }
-
-        public uint? ReorderLevel { get; set; }
-
-        [Required(ErrorMessage = "{0} is required.")]
-        public bool Discontinued { get; set; }
 
         public int? TargetSales
         {

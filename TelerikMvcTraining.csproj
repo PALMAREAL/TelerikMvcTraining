@@ -143,6 +143,13 @@
     <Compile Include="ViewModels\ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\CountryFlags\bg.png" />
+    <Content Include="Content\img\CountryFlags\br.png" />
+    <Content Include="Content\img\CountryFlags\fr.png" />
+    <Content Include="Content\img\CountryFlags\gb.png" />
+    <Content Include="Content\img\CountryFlags\in.png" />
+    <Content Include="Content\img\CountryFlags\it.png" />
+    <Content Include="Content\img\CountryFlags\us.png" />
     <Content Include="Content\img\Products\1.jpg" />
     <Content Include="Content\img\Products\10.jpg" />
     <Content Include="Content\img\Products\11.jpg" />
@@ -299,7 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\img\favicon.ico" />
     <Content Include="Content\img\accent.png" />
     <Content Include="Content\img\bullet.png" />
     <Content Include="Content\img\heroAccent.png" />

@@ -19,8 +19,10 @@ namespace TelerikMvcTraining.Data
         {
         }
 
-        public System.Data.Entity.DbSet<TelerikMvcTraining.Models.Product> Products { get; set; }
+        public DbSet<Models.Product> Products { get; set; }
 
-        public System.Data.Entity.DbSet<TelerikMvcTraining.Models.Customer> Customers { get; set; }
+        public DbSet<Models.Customer> Customers { get; set; }
+
+
     }
 }

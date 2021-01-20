@@ -21,7 +21,7 @@ namespace TelerikMvcTraining.Data.Repositories
         }
 
 
-        internal IEnumerable GetAllProducts()
+        public IEnumerable GetAllProducts()
         {
             var result = Enumerable.Range(0, 50).Select(i => new ProductViewModel
             {
@@ -40,22 +40,32 @@ namespace TelerikMvcTraining.Data.Repositories
             return result;
         }
 
-        internal IEnumerable GetAllDetailsProducts()
+        public IEnumerable GetAllDetailsProducts()
         {
             var result = Enumerable.Range(0, 50).Select(i => new DetailProductViewModel
             {
                 ProductID = i,
-                SupplierID = i + 1,
                 ProductName = "SamsungTablet" + "  A." + (i * 2),
                 UnitPrice = i + 25,
-                Discontinued = false,
+                Discontinued = true,
                 CategoryID = i + 2,
                 QuantityPerUnit = (i + 10).ToString(),
-                UnitsInStock = (uint?)(i + 3),
-                UnitsOnOrder = (uint?)(i + 4),
-                ReorderLevel = (uint?)(i + 20),
+                UnitsInStock = i + 3,
+                UnitsOnOrder = i + 4,
+                Category = new CategoryViewModel()
+                {
+                    CategoryID = 1,
+                    CategoryName = "Tablet"
+                },
+
+                Country = new CountryViewModel()
+                {
+                    CountryID =  2,
+                    CountryNameShort = "br",
+                    CountryNameLong = "Brazil"
+                },
                 TargetSales = i * 2,
-                TotalSales = i +3 
+                TotalSales = i * 100
             });
 
             return result;

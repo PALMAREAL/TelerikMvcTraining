@@ -79,7 +79,7 @@
         columns.Bound(p => p.UnitPrice).Title("Price").Width(105);
         columns.Bound(p => p.Discontinued).Title("In Stock").Width(130)
                             .ClientTemplate("<span id='badge_#=ProductID#' class='badgeTemplate'></span>");
-        //columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor").ClientGroupHeaderTemplate("Category: #=data.value#, Total Sales: #=kendo.format('{0:c}', data.aggregates.TotalSales.sum)#").Width(125);
+        columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor").ClientGroupHeaderTemplate("Category: #=data.value#, Total Sales: #=kendo.format('{0:c}', data.aggregates.TotalSales.sum)#").Width(125);
         columns.Bound(p => p.CustomerRating).Title("Rating").Width(140).Editable("returnFalse").ClientTemplate(Html.Kendo().Rating()
                 .Name("rating_#=ProductID#")
                 .Min(1)
@@ -89,8 +89,8 @@
                 .Selection("continuous")
                 .ToClientTemplate().ToHtmlString()
             );
-        //columns.Bound(p => p.Country.CountryNameLong).Title("Country").EditorTemplateName("Country").ClientTemplate(
-        //    @"<div class='k-text-center'><img src='" + @Url.Content("~/content/web/country-flags/#:data.Country.CountryNameShort#.png") + "' alt='#: data.Country.CountryNameLong#' title='#: data.Country.CountryNameLong#' width='30' /></div>").Width(120);
+        columns.Bound(p => p.Country.CountryNameLong).Title("Country").EditorTemplateName("Country").ClientTemplate(
+            @"<div class='k-text-center'><img src='" + @Url.Content("~/Content/img/CountryFlags/#:data.Country.CountryNameShort#.png") + "' alt='#: data.Country.CountryNameLong#' title='#: data.Country.CountryNameLong#' width='30' /></div>").Width(120);
         columns.Bound(p => p.UnitsInStock).Title("Units").Width(105);
         columns.Bound(p => p.TotalSales).Title("Total Sales").Width(140).Format("{0:c}");
         columns.Bound(p => p.TargetSales).Editable("returnFalse").Title("Target Sales")
@@ -152,10 +152,10 @@
             model.Field(p => p.ProductID).Editable(false);
             model.Field(p => p.Discontinued).Editable(false);
             model.Field(p => p.TotalSales).Editable(false);
-            //model.Field(p => p.Category).DefaultValue(new CategoryViewModel() { CategoryID = 8, CategoryName = "Seafood" });
-            //model.Field(p => p.Country).DefaultValue(new CountryViewModel() { CountryNameLong = "Bulgaria", CountryNameShort = "bg" });
+            model.Field(p => p.Category).DefaultValue(new CategoryViewModel() { CategoryID = 8, CategoryName = "Seafood" });
+            model.Field(p => p.Country).DefaultValue(new CountryViewModel() { CountryNameLong = "Bulgaria", CountryNameShort = "bg" });
         })
-        //.Group(group=>group.Add("Category.CategoryName", typeof(string), System.ComponentModel.ListSortDirection.Descending))
+        .Group(group=>group.Add("Category.CategoryName", typeof(string), System.ComponentModel.ListSortDirection.Descending))
         .Aggregates(agg=>agg.Add(field=>field.TotalSales).Sum())
         .Create("DetailProducts_Create", "Product")
         .Read("DetailProducts_Read", "Product")
