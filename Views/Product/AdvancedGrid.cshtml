@@ -33,8 +33,9 @@
       .ToolBar(tools => tools.Search())
       .ToolBar(tools => tools.Excel())
       .Excel(excel => excel
-            .FileName("ProductExcelExport.xlsx")
+            .AllPages(true)
             .Filterable(true)
+            .FileName("ProductExcelExport.xlsx")
             .ProxyURL(Url.Action("Excel_Export_Save", "Grid")))
       .ToolBar(tools => tools.Pdf())
       .Pdf(pdf => pdf

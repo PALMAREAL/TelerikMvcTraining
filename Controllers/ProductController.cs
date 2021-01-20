@@ -31,6 +31,11 @@ namespace TelerikMvcTraining.Controllers
             return View();
         }
 
+        public ActionResult ProGrid()
+        {
+            return View();
+        }
+
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
             var result = new ProductRepository(db).GetAllProducts();
@@ -38,6 +43,12 @@ namespace TelerikMvcTraining.Controllers
             return Json(result.ToDataSourceResult(request));
         }
 
+        public ActionResult DetailProducts_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            var result = new ProductRepository(db).GetAllDetailsProducts();
+
+            return Json(result.ToDataSourceResult(request));
+        }
 
         protected override void Dispose(bool disposing)
         {
