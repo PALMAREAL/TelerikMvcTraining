@@ -131,6 +131,7 @@
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\FunnelSales.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="Models\DetailProduct.cs" />
     <Compile Include="ViewModels\DetailProductViewModel.cs" />
+    <Compile Include="ViewModels\FunnelSalesViewModel.cs" />
     <Compile Include="ViewModels\ProductCategoriesViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />

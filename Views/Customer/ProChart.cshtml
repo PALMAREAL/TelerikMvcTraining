@@ -80,8 +80,8 @@
         )
     )
 
-    @*<div class="flex-container demo-section k-content wide">
-        @(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.FunnelSalesModel>()
+    <div class="flex-container demo-section k-content wide">
+        @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.FunnelSalesViewModel>()
             .Name("funnel-chart")
             .Title(t => t.Text("Sales Funnel 2019").Position(ChartTitlePosition.Top))
             .Series(
@@ -90,7 +90,7 @@
             )
             .DataSource(ds =>
             {
-                ds.Read(read => read.Action("FunnelSales", "Charts"))
+                ds.Read(read => read.Action("FunnelSales", "Product"))
                 .Sort(sort => sort.Add(model => model.Category).Ascending());
             })
             .SeriesColors("#166f99", "#2185b4", "#3eaee2", "#89CFF0", "#B0DFE5")
@@ -109,7 +109,8 @@
             .Legend(false)
             .Tooltip(tt => tt.Visible(true).Template("#= category #"))
         )
-        @(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.RegionSalesModel>()
+
+        @*@(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.RegionSalesModel>()
             .Name("donut-chart")
             .ChartArea(chartArea => chartArea
                 .Background("transparent"))
@@ -137,8 +138,9 @@
                 .Template("#= dataItem.Region #: #= value #%")
             )
             .SeriesColors("#166f99", "#2185b4", "#319fd2", "#3eaee2", "#89CFF0", "#B0DFE5")
-        )
-        @(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.SalesPerformersModel>()
+        )*@
+
+        @*@(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.SalesPerformersModel>()
             .Name("bar-chart")
             .Title("Top 5 Sales Performers")
             .Legend(legend => legend

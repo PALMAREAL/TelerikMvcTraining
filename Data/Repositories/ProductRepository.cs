@@ -86,5 +86,15 @@ namespace TelerikMvcTraining.Data.Repositories
                 new ProductCategoriesViewModel("2019", 3087800, 2211200, 3020300, 8319300)
             };
         }
+
+        public static IEnumerable<FunnelSalesViewModel> GetFunnelSalesData()
+        {
+            return new FunnelSalesViewModel[] {
+                new FunnelSalesViewModel("Impressions", 35319300),
+                new FunnelSalesViewModel("Listed Properties", 15319300),
+                new FunnelSalesViewModel("Properties Shown", 12319300),
+                new FunnelSalesViewModel("Total Sales", 8319300)
+            };
+        }
     }
 }
