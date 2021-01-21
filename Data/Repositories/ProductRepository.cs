@@ -96,5 +96,17 @@ namespace TelerikMvcTraining.Data.Repositories
                 new FunnelSalesViewModel("Total Sales", 8319300)
             };
         }
+
+        public static IEnumerable<RegionSalesViewModel> GetRegionSalesData()
+        {
+            return new RegionSalesViewModel[] {
+                new RegionSalesViewModel("Africa", 17.6),
+                new RegionSalesViewModel("Middle East", 9.2),
+                new RegionSalesViewModel("North America", 4.6),
+                new RegionSalesViewModel("Asia", 30.8),
+                new RegionSalesViewModel("Europe", 21.1),
+                new RegionSalesViewModel("Latin America", 16.3)
+            };
+        }
     }
 }

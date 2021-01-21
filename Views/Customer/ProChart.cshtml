@@ -110,7 +110,7 @@
             .Tooltip(tt => tt.Visible(true).Template("#= category #"))
         )
 
-        @*@(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.RegionSalesModel>()
+        @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.RegionSalesViewModel>()
             .Name("donut-chart")
             .ChartArea(chartArea => chartArea
                 .Background("transparent"))
@@ -122,7 +122,7 @@
             .Legend(legend => legend.Visible(false))
             .SeriesDefaults(series => series.Donut().StartAngle(300))
             .DataSource(ds => ds
-                .Read(read => read.Action("SalesByRegion", "Charts")))
+                .Read(read => read.Action("SalesByRegion", "Product")))
             .Series(series =>
              {
                 series.Donut("Sales", "Region")
@@ -138,7 +138,7 @@
                 .Template("#= dataItem.Region #: #= value #%")
             )
             .SeriesColors("#166f99", "#2185b4", "#319fd2", "#3eaee2", "#89CFF0", "#B0DFE5")
-        )*@
+        )
 
         @*@(Html.Kendo().Chart<Kendo.Mvc.Examples.Models.Chart.SalesPerformersModel>()
             .Name("bar-chart")

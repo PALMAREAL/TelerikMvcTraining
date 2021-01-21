@@ -62,6 +62,11 @@ namespace TelerikMvcTraining.Controllers
             return Json(ProductRepository.GetFunnelSalesData());
         }
 
+        [HttpPost]
+        public ActionResult SalesByRegion()
+        {
+            return Json(ProductRepository.GetRegionSalesData());
+        }
 
         protected override void Dispose(bool disposing)
         {
