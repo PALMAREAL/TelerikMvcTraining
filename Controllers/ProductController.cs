@@ -36,6 +36,11 @@ namespace TelerikMvcTraining.Controllers
             return View();
         }
 
+        public ActionResult BasicDropDownList()
+        {
+            return View();
+        }
+
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
             var result = new ProductRepository(db).GetAllProducts();

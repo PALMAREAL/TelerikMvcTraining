@@ -240,6 +240,7 @@
     <Content Include="Content\img\Products\8.jpg" />
     <Content Include="Content\img\Products\80.jpg" />
     <Content Include="Content\img\Products\9.jpg" />
+    <Content Include="Content\img\Products\cap.png" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css" />
@@ -311,6 +312,7 @@
     <Content Include="Views\Customer\BasicChart.cshtml" />
     <Content Include="Views\Customer\AdvancedChart.cshtml" />
     <Content Include="Views\Customer\ProChart.cshtml" />
+    <Content Include="Views\Product\BasicDropDownList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
