@@ -74,6 +74,12 @@ namespace TelerikMvcTraining.Controllers
             return Json(ProductRepository.GetSalesPerformers());
         }
 
+        [HttpPost]
+        public ActionResult BoeingStockDataRead()
+        {
+            return Json(ProductRepository.BoeingStockData());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

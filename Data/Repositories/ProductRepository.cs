@@ -119,5 +119,15 @@ namespace TelerikMvcTraining.Data.Repositories
                 new SalesPerformersViewModel("Jacob Martinez", 1780000)
             };
         }
+
+        public static IList<StockDataPointViewModel> BoeingStockData()
+        {
+            return new StockDataPointViewModel[] {
+                new StockDataPointViewModel(){ Close = 25, Date = new DateTime(2011,10,10), High = 175, Low = 65, Open = 45, Symbol = "Hello", Volume = 33},
+                new StockDataPointViewModel(){ Close = 24, Date = new DateTime(2011,10,10), High = 174, Low = 65, Open = 45, Symbol = "Hello", Volume = 32},
+                new StockDataPointViewModel(){ Close = 23, Date = new DateTime(2011,10,10), High = 173, Low = 65, Open = 45, Symbol = "Hello", Volume = 31},
+                new StockDataPointViewModel(){ Close = 22, Date = new DateTime(2011,10,10), High = 172, Low = 65, Open = 45, Symbol = "Hello", Volume = 30}
+            };
+        }
     }
 }
