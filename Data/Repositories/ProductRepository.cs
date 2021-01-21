@@ -70,5 +70,21 @@ namespace TelerikMvcTraining.Data.Repositories
 
             return result;
         }
+
+        public static IEnumerable<ProductCategoriesViewModel> GetProductCategoriesData()
+        {
+            return new ProductCategoriesViewModel[] {
+                new ProductCategoriesViewModel("2010", 2085200, 3080700, 1485700, 6651600),
+                new ProductCategoriesViewModel("2011", 2091800, 3386400, 1525800, 7004000),
+                new ProductCategoriesViewModel("2012", 3002100, 2627000, 1095500, 6724600),
+                new ProductCategoriesViewModel("2013", 3008000, 4389700, 1907500, 9305200),
+                new ProductCategoriesViewModel("2014", 3015000, 3443900, 1570000, 8028900),
+                new ProductCategoriesViewModel("2015", 3035000, 2302500, 2117600, 7455100),
+                new ProductCategoriesViewModel("2016", 3042000, 2983100, 2329700, 8354800),
+                new ProductCategoriesViewModel("2017", 3044400, 3052200, 2756800, 8853400),
+                new ProductCategoriesViewModel("2018", 3057800, 2611200, 3220300, 8889300),
+                new ProductCategoriesViewModel("2019", 3087800, 2211200, 3020300, 8319300)
+            };
+        }
     }
 }

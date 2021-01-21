@@ -50,6 +50,13 @@ namespace TelerikMvcTraining.Controllers
             return Json(result.ToDataSourceResult(request));
         }
 
+        [HttpPost]
+        public ActionResult SalesByProductCategory()
+        {
+            return Json(ProductRepository.GetProductCategoriesData());
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
