@@ -108,5 +108,16 @@ namespace TelerikMvcTraining.Data.Repositories
                 new RegionSalesViewModel("Latin America", 16.3)
             };
         }
+
+        public static IList<SalesPerformersViewModel> GetSalesPerformers()
+        {
+            return new SalesPerformersViewModel[] {
+                new SalesPerformersViewModel("John Smith", 1594000),
+                new SalesPerformersViewModel("Annie Johnson", 1860500),
+                new SalesPerformersViewModel("Christine Quinn", 1035000),
+                new SalesPerformersViewModel("Sophia Williams", 980000),
+                new SalesPerformersViewModel("Jacob Martinez", 1780000)
+            };
+        }
     }
 }
