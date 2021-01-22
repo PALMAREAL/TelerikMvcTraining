@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using TelerikMvcTraining.Models;
 
 namespace TelerikMvcTraining.Data
 {
@@ -19,10 +20,10 @@ namespace TelerikMvcTraining.Data
         {
         }
 
-        public DbSet<Models.Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
 
-        public DbSet<Models.Customer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
-
+        public DbSet<Category> Categories { get; set; }
     }
 }

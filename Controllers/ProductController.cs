@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using TelerikMvcTraining.Data;
-using TelerikMvcTraining.Models;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
-using TelerikMvcTraining.ViewModels;
 using TelerikMvcTraining.Data.Repositories;
+using TelerikMvcTraining.Models;
+using TelerikMvcTraining.ViewModels;
+using System.Linq;
+using System;
 
 namespace TelerikMvcTraining.Controllers
 {
@@ -37,6 +31,11 @@ namespace TelerikMvcTraining.Controllers
         }
 
         public ActionResult BasicDropDownList()
+        {
+            return View();
+        }
+
+        public ActionResult AdvancedDropDownList()
         {
             return View();
         }
@@ -84,6 +83,12 @@ namespace TelerikMvcTraining.Controllers
         {
             return Json(ProductRepository.BoeingStockData());
         }
+
+        public JsonResult Get_Categories()
+        {
+            return Json(ProductRepository.GetCategoriesData(), JsonRequestBehavior.AllowGet);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

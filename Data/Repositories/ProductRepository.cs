@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
+using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using TelerikMvcTraining.Models;
 using TelerikMvcTraining.ViewModels;
 
@@ -10,6 +14,9 @@ namespace TelerikMvcTraining.Data.Repositories
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
+        private TelerikContext db = new TelerikContext();
+
+
         public ProductRepository(TelerikContext dbContext) : base(dbContext)
         {
 
@@ -60,7 +67,7 @@ namespace TelerikMvcTraining.Data.Repositories
 
                 Country = new CountryViewModel()
                 {
-                    CountryID =  2,
+                    CountryID = 2,
                     CountryNameShort = "br",
                     CountryNameLong = "Brazil"
                 },
@@ -69,22 +76,6 @@ namespace TelerikMvcTraining.Data.Repositories
             });
 
             return result;
-        }
-
-        public static IEnumerable<ProductCategoriesViewModel> GetProductCategoriesData()
-        {
-            return new ProductCategoriesViewModel[] {
-                new ProductCategoriesViewModel("2010", 2085200, 3080700, 1485700, 6651600),
-                new ProductCategoriesViewModel("2011", 2091800, 3386400, 1525800, 7004000),
-                new ProductCategoriesViewModel("2012", 3002100, 2627000, 1095500, 6724600),
-                new ProductCategoriesViewModel("2013", 3008000, 4389700, 1907500, 9305200),
-                new ProductCategoriesViewModel("2014", 3015000, 3443900, 1570000, 8028900),
-                new ProductCategoriesViewModel("2015", 3035000, 2302500, 2117600, 7455100),
-                new ProductCategoriesViewModel("2016", 3042000, 2983100, 2329700, 8354800),
-                new ProductCategoriesViewModel("2017", 3044400, 3052200, 2756800, 8853400),
-                new ProductCategoriesViewModel("2018", 3057800, 2611200, 3220300, 8889300),
-                new ProductCategoriesViewModel("2019", 3087800, 2211200, 3020300, 8319300)
-            };
         }
 
         public static IEnumerable<FunnelSalesViewModel> GetFunnelSalesData()
@@ -129,5 +120,38 @@ namespace TelerikMvcTraining.Data.Repositories
                 new StockDataPointViewModel(){ Close = 22, Date = new DateTime(2011,10,10), High = 172, Low = 65, Open = 45, Symbol = "Hello", Volume = 30}
             };
         }
+
+        public static IEnumerable<ProductCategoriesViewModel> GetProductCategoriesData()
+        {
+            return new ProductCategoriesViewModel[] {
+                new ProductCategoriesViewModel("2010", 2085200, 3080700, 1485700, 6651600),
+                new ProductCategoriesViewModel("2011", 2091800, 3386400, 1525800, 7004000),
+                new ProductCategoriesViewModel("2012", 3002100, 2627000, 1095500, 6724600),
+                new ProductCategoriesViewModel("2013", 3008000, 4389700, 1907500, 9305200),
+                new ProductCategoriesViewModel("2014", 3015000, 3443900, 1570000, 8028900),
+                new ProductCategoriesViewModel("2015", 3035000, 2302500, 2117600, 7455100),
+                new ProductCategoriesViewModel("2016", 3042000, 2983100, 2329700, 8354800),
+                new ProductCategoriesViewModel("2017", 3044400, 3052200, 2756800, 8853400),
+                new ProductCategoriesViewModel("2018", 3057800, 2611200, 3220300, 8889300),
+                new ProductCategoriesViewModel("2019", 3087800, 2211200, 3020300, 8319300)
+            };
+        }
+
+        public static IEnumerable<CategoryViewModel> GetCategoriesData() => new CategoryViewModel[]
+        {
+            new CategoryViewModel(){CategoryID = 1, CategoryName = "Beverages", Description = "Soft drinks, coffees, teas, beers, and ales"},
+            new CategoryViewModel(){CategoryID = 2, CategoryName = "Condiments", Description = "Sweet and savory sauces, relishes, spreads, and seasonings" },
+            new CategoryViewModel(){CategoryID = 3, CategoryName = "Confections", Description = "Desserts, candies, and sweet breads" },
+            new CategoryViewModel(){CategoryID = 4, CategoryName = "Dairy Products", Description = "Cheeses" },
+            new CategoryViewModel(){CategoryID = 5, CategoryName = "Grains/Cereals", Description = "Breads, crackers, pasta, and cereal" },
+            new CategoryViewModel(){CategoryID = 6, CategoryName = "Meat/Poultry", Description = "Prepared meats" },
+            new CategoryViewModel(){CategoryID = 7, CategoryName = "Produce", Description = "Dried fruit and bean curd" },
+            new CategoryViewModel(){CategoryID = 8, CategoryName = "Seafood", Description = "Seaweed and fish" }
+        };
+
     }
 }
+
+
+
+
