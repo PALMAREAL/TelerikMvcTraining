@@ -11,12 +11,12 @@ namespace TelerikMvcTraining.Data.Repositories
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
 
-        private TelerikContext DbContext { get; set; }
+        private NorthwindDbContext DbContext { get; set; }
 
         private DbSet<TEntity> DbSet { get; set; }
 
 
-        public Repository(TelerikContext dbContext)
+        public Repository(NorthwindDbContext dbContext)
         {
             DbContext = dbContext;
 

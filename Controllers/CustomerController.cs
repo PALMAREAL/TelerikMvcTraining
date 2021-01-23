@@ -14,7 +14,7 @@ namespace TelerikMvcTraining.Controllers
 {
     public class CustomerController : Controller
     {
-        private TelerikContext db = new TelerikContext();
+        private NorthwindDbContext db = new NorthwindDbContext();
 
         public ActionResult BasicChart()
         {

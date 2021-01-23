@@ -114,8 +114,9 @@
     <Compile Include="Data\Repositories\IProductRepository.cs" />
     <Compile Include="Data\Repositories\IRepository.cs" />
     <Compile Include="Data\Repositories\ProductRepository.cs" />
+    <Compile Include="Data\Repositories\ProductRepositoryMock.cs" />
     <Compile Include="Data\Repositories\Repository.cs" />
-    <Compile Include="Data\TelerikContext.cs" />
+    <Compile Include="Data\NorthwindDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -327,6 +328,7 @@
     <Content Include="Views\Product\BasicDropDownList.cshtml" />
     <Content Include="Views\Product\AdvancedDropDownList.cshtml" />
     <Content Include="Views\Customer\BasicDateRangePicker.cshtml" />
+    <Content Include="TelerikNorthwindDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />

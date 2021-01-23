@@ -9,6 +9,6 @@ namespace TelerikMvcTraining.Data.Repositories
 {
     public interface IProductRepository : IRepository<Product>
     {
-         Product GetEntity(int id);
+         Product GetByCategory(int categoryID);
     }
 }

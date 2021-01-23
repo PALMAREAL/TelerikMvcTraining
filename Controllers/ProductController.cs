@@ -12,7 +12,7 @@ namespace TelerikMvcTraining.Controllers
 {
     public class ProductController : Controller
     {
-        private TelerikContext db = new TelerikContext();
+        private NorthwindDbContext db = new NorthwindDbContext();
 
 
         public ActionResult BasicGrid()
@@ -42,14 +42,14 @@ namespace TelerikMvcTraining.Controllers
 
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var result = new ProductRepository(db).GetAllProducts();
+            var result = new ProductRepositoryMock(db).GetAllProducts();
 
             return Json(result.ToDataSourceResult(request));
         }
 
         public ActionResult DetailProducts_Read([DataSourceRequest] DataSourceRequest request)
         {
-            var result = new ProductRepository(db).GetAllDetailsProducts();
+            var result = new ProductRepositoryMock(db).GetAllDetailsProducts();
 
             return Json(result.ToDataSourceResult(request));
         }
@@ -57,36 +57,36 @@ namespace TelerikMvcTraining.Controllers
         [HttpPost]
         public ActionResult SalesByProductCategory()
         {
-            return Json(ProductRepository.GetProductCategoriesData());
+            return Json(ProductRepositoryMock.GetProductCategoriesData());
         }
 
         [HttpPost]
         public ActionResult FunnelSales()
         {
-            return Json(ProductRepository.GetFunnelSalesData());
+            return Json(ProductRepositoryMock.GetFunnelSalesData());
         }
 
         [HttpPost]
         public ActionResult SalesByRegion()
         {
-            return Json(ProductRepository.GetRegionSalesData());
+            return Json(ProductRepositoryMock.GetRegionSalesData());
         }
 
         [HttpPost]
         public ActionResult SalesPerformers()
         {
-            return Json(ProductRepository.GetSalesPerformers());
+            return Json(ProductRepositoryMock.GetSalesPerformers());
         }
 
         [HttpPost]
         public ActionResult BoeingStockDataRead()
         {
-            return Json(ProductRepository.BoeingStockData());
+            return Json(ProductRepositoryMock.BoeingStockData());
         }
 
         public JsonResult Get_Categories()
         {
-            return Json(ProductRepository.GetCategoriesData(), JsonRequestBehavior.AllowGet);
+            return Json(ProductRepositoryMock.GetCategoriesData(), JsonRequestBehavior.AllowGet);
         }
 
 

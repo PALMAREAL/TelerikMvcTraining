@@ -5,7 +5,7 @@ namespace TelerikMvcTraining.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TelerikMvcTraining.Data.TelerikContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TelerikMvcTraining.Data.NorthwindDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace TelerikMvcTraining.Migrations
             ContextKey = "TelerikMvcTraining.Data.TelerikContext";
         }
 
-        protected override void Seed(TelerikMvcTraining.Data.TelerikContext context)
+        protected override void Seed(TelerikMvcTraining.Data.NorthwindDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

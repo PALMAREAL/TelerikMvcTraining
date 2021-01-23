@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TelerikMvcTraining.Controllers.ProductController">
+    <Position X="21" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACAACBQSAAAAAYAUAAAIAAAAABAAAAAAAMAAAA=</HashCode>
+      <FileName>Controllers\ProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Controllers.CustomerController">
+    <Position X="19" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAQg=</HashCode>
+      <FileName>Controllers\CustomerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Controllers.HomeController">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Data.NorthwindDbContext">
+    <Position X="15.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Data\NorthwindDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.Category">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAAgAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.Country">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAQAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.Customer">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAgAAAAAAIIAAgAAAAEAIAAAACAAACIAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.DetailProduct">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAACAAAAAAAAAAAAAAAAAAMQAIQAAAAAAAooCAA=</HashCode>
+      <FileName>Models\DetailProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.Entity" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.FunnelSales">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAA=</HashCode>
+      <FileName>Models\FunnelSales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.Product">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAACAAAAAAAAAAAAQAAAAAEAAAAAACAAAAgoAAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.ProductCategories">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAABAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAIA=</HashCode>
+      <FileName>Models\ProductCategories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.RegionSales">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RegionSales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.SalesPerformers">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\SalesPerformers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Models.StockDataPoint">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAgAAAAAAAAgAAAABAAIAAACACAA=</HashCode>
+      <FileName>Models\StockDataPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.Data.Repositories.ProductRepository">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TelerikMvcTraining.Data.Repositories.ProductRepositoryMock">
+    <Position X="3.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAIAAAAAgAEAAIAQBAAAIAIAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Data\Repositories\ProductRepositoryMock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TelerikMvcTraining.Data.Repositories.Repository&lt;TEntity&gt;">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAABAAAAAAAEAAAEIAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Data\Repositories\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.CategoryViewModel">
+    <Position X="0.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAAgAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\CategoryViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.CountryViewModel">
+    <Position X="7.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAQAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\CountryViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.CustomerVieModel">
+    <Position X="14.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAgAAAAAAIIAAgAAAAEAIAAAACAAACIAAAAAA=</HashCode>
+      <FileName>ViewModels\CustomerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.DetailProductViewModel">
+    <Position X="18.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAACAAAAAAAAAAAQAAIAAAMQAIQAAAAAAAooCAA=</HashCode>
+      <FileName>ViewModels\DetailProductViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.FunnelSalesViewModel">
+    <Position X="3" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAA=</HashCode>
+      <FileName>ViewModels\FunnelSalesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.ProductCategoriesViewModel">
+    <Position X="9.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAABAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAIA=</HashCode>
+      <FileName>ViewModels\ProductCategoriesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.ProductViewModel">
+    <Position X="16.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAACAAAAAAAAAAAAQAAAAAEAAAAAACAAAAgoAAA=</HashCode>
+      <FileName>ViewModels\ProductViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.RegionSalesViewModel">
+    <Position X="21" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RegionSalesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.SalesPerformersViewModel">
+    <Position X="5.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\SalesPerformersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.StockDataPointViewModel">
+    <Position X="12" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAgAAAAAAAAgAAAABAAIAAACACAA=</HashCode>
+      <FileName>ViewModels\StockDataPointViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelerikMvcTraining.ViewModels.ViewModel&lt;TEntity&gt;">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TelerikMvcTraining.Data.Repositories.IProductRepository">
+    <Position X="0.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TelerikMvcTraining.Data.Repositories.IRepository&lt;TEntity&gt;">
+    <Position X="0.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAABAAAAAAAAAAAEAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
