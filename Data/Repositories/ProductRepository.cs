@@ -14,19 +14,17 @@ namespace TelerikMvcTraining.Data.Repositories
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
-        private TelerikContext db = new TelerikContext();
-
+        private TelerikContext db;
 
         public ProductRepository(TelerikContext dbContext) : base(dbContext)
         {
-
+            db = dbContext;
         }
 
         public Product GetEntity(int id)
         {
             return Get(m => m.ProductID == id, null, "Product").FirstOrDefault();
         }
-
 
         public IEnumerable GetAllProducts()
         {
@@ -148,7 +146,6 @@ namespace TelerikMvcTraining.Data.Repositories
             new CategoryViewModel(){CategoryID = 7, CategoryName = "Produce", Description = "Dried fruit and bean curd" },
             new CategoryViewModel(){CategoryID = 8, CategoryName = "Seafood", Description = "Seaweed and fish" }
         };
-
     }
 }
 
