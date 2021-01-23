@@ -2,18 +2,19 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+@*<div class="jumbotron">
     <h5>TELERIK-MVC-TRAINING</h5>
     <p class="lead text-muted">TelerikMvcTraining is a MVC web app to practice the most popular componets from Telerik library.</p>
     <p><a href="https://demos.telerik.com/aspnet-mvc?_ga=2.164112383.1524206460.1609935354-1862268976.1609670797" class="k-button k-primary">Learn more &raquo;</a></p>
-</div>
+</div>*@
 
 <div class="row mb-3">
     <div class="col-md mt-3 mb-3">
         <div class="k-card">
-            <div class="k-card-header">
-                Grid
+            <div class="k-card-header" style="color:blueviolet">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/Content/img/Components/grid.svg")))  Grid
             </div>
+
             <div class="k-card-body">
                 <p>
                     The Grid allows users to browser, edit, filter, group, sort, select, and export tabular data.
@@ -29,7 +30,7 @@
     <div class="col-md mt-3 mb-3">
         <div class="k-card">
             <div class="k-card-header">
-                Chart
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/barcharts.svg"))) Chart
             </div>
             <div class="k-card-body">
                 <p>The Charts allow users to visualise and output graphical representations of data.</p>
@@ -41,25 +42,25 @@
             </div>
         </div>
     </div>
+    @*<div class="col-md mt-3 mb-3">
+            <div class="k-card">
+                <div class="k-card-header">
+                   @Html.Raw(File.ReadAllText(Server.MapPath("~/content/shared/images/components/scheduler.svg"))) Sheduler
+                </div>
+                <div class="k-card-body">
+                    <p>The Scheduler allows users to view and edit their event calendar.</p>
+                </div>
+                <div class="k-card-actions">
+                    <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Customer")</span>
+                    <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Customer")</span>
+                    <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Customer")</span>
+                </div>
+            </div>
+        </div>*@
     <div class="col-md mt-3 mb-3">
         <div class="k-card">
             <div class="k-card-header">
-                Sheduler
-            </div>
-            <div class="k-card-body">
-                <p>The Scheduler allows users to view and edit their event calendar.</p>
-            </div>
-            <div class="k-card-actions">
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Customer")</span>
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Customer")</span>
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Customer")</span>
-            </div>
-        </div>
-    </div>
-    <div class="col-md mt-3 mb-3">
-        <div class="k-card">
-            <div class="k-card-header">
-                DropDownList
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/dropdownlist.svg"))) DropDownList
             </div>
             <div class="k-card-body">
                 <p>The DropDownList allows users to single select a single value from a predefined list.</p>
@@ -67,14 +68,14 @@
             <div class="k-card-actions">
                 <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDropdownList", "Product")</span>
                 <span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedDropDownList", "Product")</span>
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProDropDownList", "Product")</span>
+                @*<span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProDropDownList", "Product")</span>*@
             </div>
         </div>
     </div>
     <div class="col-md mt-3 mb-3">
         <div class="k-card">
             <div class="k-card-header">
-                DateRangePicker
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) DateRangePicker
             </div>
             <div class="k-card-body">
                 <p>The DateRangePicker allows the user to select a date range from a calendar.</p>

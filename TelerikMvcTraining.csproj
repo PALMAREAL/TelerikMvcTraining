@@ -166,6 +166,14 @@
     <Content Include="Content\img\Categories\6.jpg" />
     <Content Include="Content\img\Categories\7.jpg" />
     <Content Include="Content\img\Categories\8.jpg" />
+    <Content Include="Content\img\Components\barcharts.svg" />
+    <Content Include="Content\img\Components\daterangepicker.svg" />
+    <Content Include="Content\img\Components\dropdownlist.svg" />
+    <Content Include="Content\img\Components\editor.svg" />
+    <Content Include="Content\img\Components\grid.svg" />
+    <Content Include="Content\img\Components\scheduler.svg" />
+    <Content Include="Content\img\Components\upload.svg" />
+    <Content Include="Content\img\Components\window.svg" />
     <Content Include="Content\img\CountryFlags\bg.png" />
     <Content Include="Content\img\CountryFlags\br.png" />
     <Content Include="Content\img\CountryFlags\fr.png" />
