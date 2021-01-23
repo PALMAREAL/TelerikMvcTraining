@@ -31,6 +31,11 @@ namespace TelerikMvcTraining.Controllers
             return View();
         }
 
+        public ActionResult BasicDateRangePicker()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

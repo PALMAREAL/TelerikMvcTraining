@@ -326,6 +326,7 @@
     <Content Include="Views\Customer\ProChart.cshtml" />
     <Content Include="Views\Product\BasicDropDownList.cshtml" />
     <Content Include="Views\Product\AdvancedDropDownList.cshtml" />
+    <Content Include="Views\Customer\BasicDateRangePicker.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
