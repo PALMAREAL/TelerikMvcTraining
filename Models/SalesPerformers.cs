@@ -5,14 +5,8 @@ using System.Web;
 
 namespace TelerikMvcTraining.Models
 {
-    public class SalesPerformers
+    public class SalesPerformers : Entity
     {
-        public SalesPerformers(string salesPerson, int salesAmount)
-        {
-            SalesPerson = salesPerson;
-            SalesAmount = salesAmount;
-        }
-
         public string SalesPerson { get; set; }
 
         public int SalesAmount { get; set; }

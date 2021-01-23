@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TelerikMvcTraining.Models;
 
 namespace TelerikMvcTraining.ViewModels
 {
-    public class SalesPerformersViewModel
+    public class SalesPerformersViewModel : ViewModel<SalesPerformers>
     {
-        public SalesPerformersViewModel(string salesPerson, int salesAmount)
-        {
-            SalesPerson = salesPerson;
-            SalesAmount = salesAmount;
-        }
-
         public string SalesPerson { get; set; }
 
         public int SalesAmount { get; set; }
+
+        public SalesPerformersViewModel(string salesPerson, int salesAmount)
+        {
+            SalesPerson = salesPerson;
+
+            SalesAmount = salesAmount;
+        }
     }
 }

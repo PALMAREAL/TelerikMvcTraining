@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TelerikMvcTraining.Models
 {
-    public class StockDataPoint
+    public class StockDataPoint : Entity
     {
         public DateTime Date { get; set; }
 

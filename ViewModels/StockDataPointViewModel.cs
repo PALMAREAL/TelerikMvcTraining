@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TelerikMvcTraining.Models;
 
 namespace TelerikMvcTraining.ViewModels
 {
-    public class StockDataPointViewModel
+    public class StockDataPointViewModel : ViewModel<StockDataPoint>
     {
         public DateTime Date { get; set; }
 

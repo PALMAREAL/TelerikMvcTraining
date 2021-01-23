@@ -5,14 +5,8 @@ using System.Web;
 
 namespace TelerikMvcTraining.Models
 {
-    public class RegionSalesModel
+    public class RegionSales : Entity
     {
-        public RegionSalesModel(string region, double sales)
-        {
-            Region = region;
-            Sales = sales;
-        }
-
         public string Region { get; set; }
 
         public double Sales { get; set; }

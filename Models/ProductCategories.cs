@@ -5,17 +5,8 @@ using System.Web;
 
 namespace TelerikMvcTraining.Models
 {
-    public class ProductCategories
+    public class ProductCategories : Entity
     {
-        public ProductCategories(string year, int vacantLand, int residentialProperties, int commercialProperties, int total)
-        {
-            Year = year;
-            VacantLand = vacantLand;
-            ResidentialProperties = residentialProperties;
-            CommercialProperties = commercialProperties;
-            Total = total;
-        }
-
         public string Year { get; set; }
 
         public int VacantLand { get; set; }

@@ -2,19 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using TelerikMvcTraining.Models;
 
 namespace TelerikMvcTraining.ViewModels
 {
-    public class ProductCategoriesViewModel
+    public class ProductCategoriesViewModel : ViewModel<ProductCategories>
     {
-        public ProductCategoriesViewModel(string year, int vacantLand, int residentialProperties, int commercialProperties, int total)
-        {
-            Year = year;
-            VacantLand = vacantLand;
-            ResidentialProperties = residentialProperties;
-            CommercialProperties = commercialProperties;
-            Total = total;
-        }
 
         public string Year { get; set; }
 
@@ -25,5 +18,18 @@ namespace TelerikMvcTraining.ViewModels
         public int CommercialProperties { get; set; }
 
         public int Total { get; set; }
+
+        public ProductCategoriesViewModel(string year, int vacantLand, int residentialProperties, int commercialProperties, int total)
+        {
+            Year = year;
+
+            VacantLand = vacantLand;
+
+            ResidentialProperties = residentialProperties;
+
+            CommercialProperties = commercialProperties;
+
+            Total = total;
+        }
     }
 }
