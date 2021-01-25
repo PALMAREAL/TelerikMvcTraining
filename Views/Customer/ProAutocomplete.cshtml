@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "ProAutocomplete";
+}
+
+<h2>ProAutocomplete</h2>
+
+<style>
+    .k-autocomplete {
+        width: 100%;
+    }
+
+    .center-autocomplete {
+        width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+</style>
+
+<div class="center-autocomplete">
+    <div class="demo-section k-content">
+        <h4>Products from a service</h4>
+        @(Html.Kendo().AutoComplete()
+          .Name("products")
+          .DataTextField("ProductName")
+          .Filter("contains")
+          .MinLength(3)
+          .HtmlAttributes(new { style = "width:100%" })
+          .DataSource(source => source
+              .Custom()
+              .Type("odata")
+              .ServerFiltering(true)
+              .ServerPaging(true)
+              .PageSize(20)
+              .Transport(transport => transport
+                  .Read(read => read.Url("https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"))
+              )
+          )
+    )
+    </div>
+</div>
+
+<div class="center-autocomplete">
+    <div class="demo-section k-content">
+        <h4>Categories from database</h4>
+        @(Html.Kendo().AutoComplete()
+          .Name("categries")
+          .DataTextField("CategoryName")
+          .HtmlAttributes(new { style = "width:100%" })
+          .Filter("contains")
+          .DataSource(source => {
+              source.Read(read =>
+              {
+                  read.Action("GetCategories", "Customer");
+              })
+              .ServerFiltering(false);
+          })
+    )
+    </div>
+</div>

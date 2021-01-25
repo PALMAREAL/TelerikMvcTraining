@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using TelerikMvcTraining.Data;
 using TelerikMvcTraining.Models;
+using TelerikMvcTraining.ViewModels;
 
 namespace TelerikMvcTraining.Controllers
 {
@@ -39,6 +40,23 @@ namespace TelerikMvcTraining.Controllers
         public ActionResult BasicAutocomplete()
         {
             return View();
+        }
+
+        public ActionResult ProAutocomplete()
+        {
+            return View();
+        }
+
+        public JsonResult GetCategories()
+        {
+            var categories = db.Categories.Select(c => new CategoryViewModel
+            {
+                CategoryID = c.CategoryID,
+                CategoryName = c.CategoryName,
+                Description = c.Description
+            });
+
+            return Json(categories, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)
