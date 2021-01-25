@@ -85,4 +85,17 @@
             </div>
         </div>
     </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) Autocomplete
+            </div>
+            <div class="k-card-body">
+                <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicAutocomplete", "Customer")</span>
+            </div>
+        </div>
+    </div>
 </div>

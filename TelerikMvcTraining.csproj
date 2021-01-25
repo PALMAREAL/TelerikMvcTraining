@@ -337,6 +337,7 @@
     <Content Include="Views\Product\AdvancedDropDownList.cshtml" />
     <Content Include="Views\Customer\BasicDateRangePicker.cshtml" />
     <Content Include="TelerikNorthwindDiagram.cd" />
+    <Content Include="Views\Customer\BasicAutocomplete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
