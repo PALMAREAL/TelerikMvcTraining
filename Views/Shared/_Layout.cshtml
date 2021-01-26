@@ -1,4 +1,19 @@
 ﻿<!DOCTYPE html>
+
+<style>
+    .navbar-brand-title {
+        display: inline-block;
+        padding-top: .3125rem;
+        padding-bottom: .3125rem;
+        margin-right: 1rem;
+        font-size: 2rem;
+        line-height: inherit;
+        white-space: nowrap;
+        font-family: Lobster;
+        color: brown;
+    }
+</style>
+
 <html> 
     <head>
         <meta charset="utf-8" />
@@ -19,7 +34,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-menu"></span></button>
-                    @Html.ActionLink("TelerikTraining", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("TelerikTraining", "Index", "Home", new { area = "" }, new { @class = "navbar-brand-title" })
                 </div>
                 <div id="responsive-panel" class="navbar-left">
                     @(Html.Kendo().Menu()
