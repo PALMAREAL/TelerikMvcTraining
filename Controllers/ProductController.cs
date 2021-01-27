@@ -7,16 +7,19 @@ using TelerikMvcTraining.Models;
 using TelerikMvcTraining.ViewModels;
 using System.Linq;
 using System;
+using TelerikMvcTraining.Services;
 
 namespace TelerikMvcTraining.Controllers
 {
     public class ProductController : Controller
     {
-        public IProductRepository ProductRepository { get; set; }
+        //public IProductRepository ProductRepository { get; set; }
 
-        public ProductController(IProductRepository productRepository)
+        public IProductService ProductService { get; set; }
+
+        public ProductController(IProductService productService)
         {
-            ProductRepository = productRepository;
+            ProductService = productService;
         }
 
         public ActionResult BasicGrid()
@@ -46,47 +49,47 @@ namespace TelerikMvcTraining.Controllers
 
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(ProductRepository.GetAllProducts().ToDataSourceResult(request));
+            return Json(ProductService.GetAllProducts().ToDataSourceResult(request));
         }
 
         public ActionResult DetailProducts_Read([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(ProductRepository.GetAllDetailsProducts().ToDataSourceResult(request));
+            return Json(ProductService.GetAllDetailsProducts().ToDataSourceResult(request));
         }
 
         [HttpPost]
         public ActionResult SalesByProductCategory()
         {
-            return Json(ProductRepository.GetProductCategoriesData());
+            return Json(ProductService.GetProductCategoriesData());
         }
 
         [HttpPost]
         public ActionResult FunnelSales()
         {
-            return Json(ProductRepository.GetFunnelSalesData());
+            return Json(ProductService.GetFunnelSalesData());
         }
 
         [HttpPost]
         public ActionResult SalesByRegion()
         {
-            return Json(ProductRepository.GetRegionSalesData());
+            return Json(ProductService.GetRegionSalesData());
         }
 
         [HttpPost]
         public ActionResult SalesPerformers()
         {
-            return Json(ProductRepository.GetSalesPerformers());
+            return Json(ProductService.GetSalesPerformers());
         }
 
         [HttpPost]
         public ActionResult BoeingStockDataRead()
         {
-            return Json(ProductRepository.BoeingStockData());
+            return Json(ProductService.BoeingStockData());
         }
 
         public JsonResult Get_Categories()
         {
-            return Json(ProductRepository.GetCategoriesData(), JsonRequestBehavior.AllowGet);
+            return Json(ProductService.GetCategoriesData(), JsonRequestBehavior.AllowGet);
         }
     }
 }

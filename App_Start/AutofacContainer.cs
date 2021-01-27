@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using TelerikMvcTraining.Data;
 using TelerikMvcTraining.Data.Repositories;
 using TelerikMvcTraining.Models;
+using TelerikMvcTraining.Services;
 
 namespace TelerikMvcTraining.App_Start
 {
@@ -22,6 +23,8 @@ namespace TelerikMvcTraining.App_Start
 
             // Register application dependencies.
             builder.RegisterType<ProductRepositoryMock>().As<IProductRepository>();
+
+            builder.RegisterType<ProductService>().As<IProductService>();
 
             builder.RegisterType<NorthwindDbContext>().InstancePerRequest();
 
