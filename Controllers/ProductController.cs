@@ -47,6 +47,10 @@ namespace TelerikMvcTraining.Controllers
             return View();
         }
 
+
+
+        
+
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
             return Json(ProductService.GetAllProducts().ToDataSourceResult(request));

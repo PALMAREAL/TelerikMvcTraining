@@ -142,6 +142,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="AutoMapper\ProductProfile.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CheckBoxController.cs" />
+    <Compile Include="Controllers\ComboBoxController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -335,6 +337,7 @@
     <Content Include="Content\img\Products\80.jpg" />
     <Content Include="Content\img\Products\9.jpg" />
     <Content Include="Content\img\Products\cap.png" />
+    <Content Include="Content\img\Products\tShirt.png" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css" />
@@ -412,6 +415,9 @@
     <Content Include="TelerikNorthwindDiagram.cd" />
     <Content Include="Views\Customer\BasicAutocomplete.cshtml" />
     <Content Include="Views\Customer\ProAutocomplete.cshtml" />
+    <Content Include="Views\CheckBox\BasicCheckBox.cshtml" />
+    <Content Include="Views\ComboBox\BasicComboBox.cshtml" />
+    <Content Include="Views\ComboBox\ProComboBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
