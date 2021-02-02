@@ -10,21 +10,21 @@ using TelerikMvcTraining.ViewModels;
 
 namespace TelerikMvcTraining.Controllers
 {
-    public class ShedulerController : Controller
+    public class SchedulerController : Controller
     {
         public SchedulerTaskService TaskService { get; set; }
 
-        public ShedulerController(SchedulerTaskService taskService)
+        public SchedulerController(SchedulerTaskService taskService)
         {
             TaskService = taskService;
         }
 
-        public ActionResult BasicSheduler()
+        public ActionResult BasicScheduler()
         {
             return View();
         }
 
-        public ActionResult ProSheduler()
+        public ActionResult ProScheduler()
         {
             return View();
         }

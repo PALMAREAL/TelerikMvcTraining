@@ -156,7 +156,7 @@
       <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\SchedulerTaskService.cs" />
-    <Compile Include="Controllers\ShedulerController.cs" />
+    <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Data\Repositories\IProductRepository.cs" />
     <Compile Include="Data\Repositories\IRepository.cs" />
     <Compile Include="Data\Repositories\ProductRepository.cs" />
@@ -438,8 +438,8 @@
     <Content Include="Views\CheckBox\BasicCheckBox.cshtml" />
     <Content Include="Views\ComboBox\BasicComboBox.cshtml" />
     <Content Include="Views\ComboBox\ProComboBox.cshtml" />
-    <Content Include="Views\Sheduler\BasicSheduler.cshtml" />
-    <Content Include="Views\Sheduler\ProSheduler.cshtml" />
+    <Content Include="Views\Scheduler\BasicScheduler.cshtml" />
+    <Content Include="Views\Scheduler\ProScheduler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
