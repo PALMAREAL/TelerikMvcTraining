@@ -21,9 +21,8 @@
                 </p>
             </div>
             <div class="k-card-actions">
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Product")</span>
-                @*<span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Product")</span>*@
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Grid")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Grid")</span>
             </div>
         </div>
     </div>
@@ -36,9 +35,8 @@
                 <p>The Charts allow users to visualise and output graphical representations of data.</p>
             </div>
             <div class="k-card-actions">
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicChart", "Customer")</span>
-                @*<span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedChart", "Customer")</span>*@
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProChart", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicChart", "Chart")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProChart", "Chart")</span>
             </div>
         </div>
     </div>
@@ -52,7 +50,6 @@
             </div>
             <div class="k-card-actions">
                 <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Customer")</span>
-                @*<span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedGrid", "Customer")</span>*@
                 <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Customer")</span>
             </div>
         </div>
@@ -66,9 +63,8 @@
                 <p>The DropDownList allows users to single select a single value from a predefined list.</p>
             </div>
             <div class="k-card-actions">
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDropdownList", "Product")</span>
-                @*<span class="k-button k-flat k-primary">@Html.ActionLink("Advanced", "AdvancedDropDownList", "Product")</span>*@
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProDropDownList", "Product")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDropdownList", "DropdownList")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProDropDownList", "DropdownList")</span>
             </div>
         </div>
     </div>
@@ -119,65 +115,33 @@
         </div>
     </div>
 
-    @*<div class="col-md mt-3 mb-3">
-                <div class="k-card">
-                    <div class="k-card-header">
-                        @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) CheckBoxGroup
-                    </div>
-                    <div class="k-card-body">
-                        <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
-                    </div>
-                    <div class="k-card-actions">
-                        <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDateRangePicker", "Customer")</span>
-
-                    </div>
-                </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) CheckBoxGroup
             </div>
-            <div class="col-md mt-3 mb-3">
-                <div class="k-card">
-                    <div class="k-card-header">
-                        @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) DatePicker
-                    </div>
-                    <div class="k-card-body">
-                        <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
-                    </div>
-                    <div class="k-card-actions">
-                        <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDateRangePicker", "Customer")</span>
-
-                    </div>
-                </div>
+            <div class="k-card-body">
+                <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
             </div>
-            <div class="col-md mt-3 mb-3">
-                <div class="k-card">
-                    <div class="k-card-header">
-                        @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) DateTimePicker
-                    </div>
-                    <div class="k-card-body">
-                        <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
-                    </div>
-                    <div class="k-card-actions">
-                        <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDateRangePicker", "Customer")</span>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDateRangePicker", "Customer")</span>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-md mt-3 mb-3">
-                <div class="k-card">
-                    <div class="k-card-header">
-                        @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) DateRangePicker
-                    </div>
-                    <div class="k-card-body">
-                        <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
-                    </div>
-                    <div class="k-card-actions">
-                        <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicDateRangePicker", "Customer")</span>
-
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="row mb-3">
+    </div>
+    <div class="col-md mt-3 mb-3">
+        <div class="k-card">
+            <div class="k-card-header">
+                @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) DatePickers
+            </div>
+            <div class="k-card-body">
+                <p>The DateRangePicker allows the user to select a date range from a calendar.</p>
+            </div>
+            <div class="k-card-actions">
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basics", "BasicPickers", "Picker")</span>
 
-            </div>*@
-
+            </div>
+        </div>
+    </div>
 </div>
+

@@ -17,25 +17,6 @@ namespace TelerikMvcTraining.Controllers
     {
         private NorthwindDbContext db = new NorthwindDbContext();
 
-        public ActionResult BasicChart()
-        {
-            return View();
-        }
-
-        public ActionResult AdvancedChart()
-        {
-            return View();
-        }
-
-        public ActionResult ProChart()
-        {
-            return View();
-        }
-
-        public ActionResult BasicDateRangePicker()
-        {
-            return View();
-        }
 
         public ActionResult BasicAutocomplete()
         {

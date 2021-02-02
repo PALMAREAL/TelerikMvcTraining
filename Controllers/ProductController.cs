@@ -20,36 +20,7 @@ namespace TelerikMvcTraining.Controllers
         public ProductController(IProductService productService)
         {
             ProductService = productService;
-        }
-
-        public ActionResult BasicGrid()
-        {
-            return View();
-        }
-
-        public ActionResult AdvancedGrid()
-        {
-            return View();
-        }
-
-        public ActionResult ProGrid()
-        {
-            return View();
-        }
-
-        public ActionResult BasicDropDownList()
-        {
-            return View();
-        }
-
-        public ActionResult AdvancedDropDownList()
-        {
-            return View();
-        }
-
-
-
-        
+        }   
 
         public ActionResult Products_Read([DataSourceRequest] DataSourceRequest request)
         {
