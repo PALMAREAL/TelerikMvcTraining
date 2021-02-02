@@ -19,5 +19,7 @@ namespace TelerikMvcTraining.Data
         public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Task> Tasks { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using Autofac;
 using Autofac.Integration.Mvc;
+using Kendo.Mvc.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace TelerikMvcTraining.App_Start
             builder.RegisterType<ProductRepositoryMock>().As<IProductRepository>();
 
             builder.RegisterType<ProductService>().As<IProductService>();
+
+            builder.RegisterType<SchedulerTaskService>().InstancePerRequest();
 
             builder.RegisterType<NorthwindDbContext>().InstancePerRequest();
 

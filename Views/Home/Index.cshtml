@@ -49,8 +49,8 @@
                 <p>The Scheduler allows users to view and edit their event calendar.</p>
             </div>
             <div class="k-card-actions">
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicGrid", "Customer")</span>
-                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProGrid", "Customer")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Basic", "BasicSheduler", "Sheduler")</span>
+                <span class="k-button k-flat k-primary">@Html.ActionLink("Pro", "ProSheduler", "Sheduler")</span>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
 <div class="row mb-3">
 
     <div class="col-md mt-3 mb-3">
-        <div class="k-card" style="width: 390px">
+        <div class="k-card">
             <div class="k-card-header">
                 @Html.Raw(File.ReadAllText(Server.MapPath("~/content/img/Components/daterangepicker.svg"))) Combobox
             </div>

@@ -151,6 +151,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Services\SchedulerTaskService.cs" />
+    <Compile Include="Controllers\ShedulerController.cs" />
     <Compile Include="Data\Repositories\IProductRepository.cs" />
     <Compile Include="Data\Repositories\IRepository.cs" />
     <Compile Include="Data\Repositories\ProductRepository.cs" />
@@ -182,6 +184,7 @@
     <Compile Include="Models\RegionSales.cs" />
     <Compile Include="Models\SalesPerformers.cs" />
     <Compile Include="Models\StockDataPoint.cs" />
+    <Compile Include="Models\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Services\ProductService.cs" />
@@ -198,6 +201,7 @@
     <Compile Include="ViewModels\RegionSalesViewModel.cs" />
     <Compile Include="ViewModels\SalesPerformersViewModel.cs" />
     <Compile Include="ViewModels\StockDataPointViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -342,6 +346,15 @@
     <Content Include="Content\img\Products\9.jpg" />
     <Content Include="Content\img\Products\cap.png" />
     <Content Include="Content\img\Products\tShirt.png" />
+    <Content Include="Content\img\Scheduler\1h.png" />
+    <Content Include="Content\img\Scheduler\24h.png" />
+    <Content Include="Content\img\Scheduler\fast-and-furious.jpg" />
+    <Content Include="Content\img\Scheduler\now-you-see-me.jpg" />
+    <Content Include="Content\img\Scheduler\scheduler-people.png" />
+    <Content Include="Content\img\Scheduler\team-schedule.png" />
+    <Content Include="Content\img\Scheduler\the-help.jpg" />
+    <Content Include="Content\img\Scheduler\the-internship.jpg" />
+    <Content Include="Content\img\Scheduler\wallflower.jpg" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css" />
@@ -421,6 +434,8 @@
     <Content Include="Views\CheckBox\BasicCheckBox.cshtml" />
     <Content Include="Views\ComboBox\BasicComboBox.cshtml" />
     <Content Include="Views\ComboBox\ProComboBox.cshtml" />
+    <Content Include="Views\Sheduler\BasicSheduler.cshtml" />
+    <Content Include="Views\Sheduler\ProSheduler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
