@@ -151,6 +151,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Migrations\202102021304587_AddSheduler.cs" />
+    <Compile Include="Migrations\202102021304587_AddSheduler.Designer.cs">
+      <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\SchedulerTaskService.cs" />
     <Compile Include="Controllers\ShedulerController.cs" />
     <Compile Include="Data\Repositories\IProductRepository.cs" />
@@ -468,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101221055492_ModifyCategory.resx">
       <DependentUpon>202101221055492_ModifyCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102021304587_AddSheduler.resx">
+      <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
