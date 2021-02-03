@@ -20,7 +20,7 @@
 
 <div class="center-autocomplete">
     <div class="demo-section k-content">
-        <h4>Products from a service</h4>
+        <h4>Products from a online service</h4>
         @(Html.Kendo().AutoComplete()
           .Name("products")
           .DataTextField("ProductName")
@@ -37,6 +37,25 @@
                   .Read(read => read.Url("https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"))
               )
           )
+    )
+    </div>
+</div>
+
+<div class="center-autocomplete">
+    <div class="demo-section k-content">
+        <h4>Categories from local service</h4>
+        @(Html.Kendo().AutoComplete()
+          .Name("categoriesfromlocalservice")
+          .DataTextField("CategoryName")
+          .HtmlAttributes(new { style = "width:100%" })
+          .Filter("contains")
+          .DataSource(source => {
+              source.Read(read =>
+              {
+                  read.Action("Get_Categories", "Product");
+              })
+              .ServerFiltering(false);
+          })
     )
     </div>
 </div>
