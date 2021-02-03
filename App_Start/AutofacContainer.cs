@@ -1,12 +1,15 @@
 ﻿
 using Autofac;
 using Autofac.Integration.Mvc;
+using AutoMapper;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
 using Kendo.Mvc.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TelerikMvcTraining.AutoMapper;
 using TelerikMvcTraining.Data;
 using TelerikMvcTraining.Data.Repositories;
 using TelerikMvcTraining.Models;
@@ -20,16 +23,17 @@ namespace TelerikMvcTraining.App_Start
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterType<NorthwindDbContext>().InstancePerRequest();
 
-            // Register application dependencies.
-            builder.RegisterType<ProductRepositoryMock>().As<IProductRepository>();
+            builder.RegisterAutoMapper(typeof(MvcApplication).Assembly);
+
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             builder.RegisterType<ProductService>().As<IProductService>();
 
             builder.RegisterType<SchedulerTaskService>().InstancePerRequest();
 
-            builder.RegisterType<NorthwindDbContext>().InstancePerRequest();
+            builder.RegisterType<ProductRepositoryMock>().As<IProductRepository>();
 
             var container = builder.Build();
 
