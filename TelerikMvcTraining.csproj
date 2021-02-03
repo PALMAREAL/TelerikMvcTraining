@@ -236,6 +236,7 @@
     <Content Include="Content\img\CountryFlags\in.png" />
     <Content Include="Content\img\CountryFlags\it.png" />
     <Content Include="Content\img\CountryFlags\us.png" />
+    <Content Include="Content\img\gradient.jpg" />
     <Content Include="Content\img\Organization\001-account.svg" />
     <Content Include="Content\img\Organization\002-balance sheet.svg" />
     <Content Include="Content\img\Organization\003-conference.svg" />
@@ -363,6 +364,7 @@
     <Content Include="Content\img\Scheduler\the-help.jpg" />
     <Content Include="Content\img\Scheduler\the-internship.jpg" />
     <Content Include="Content\img\Scheduler\wallflower.jpg" />
+    <Content Include="Content\img\Screenshot.png" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css" />
