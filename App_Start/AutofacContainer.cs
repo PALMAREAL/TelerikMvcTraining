@@ -33,6 +33,8 @@ namespace TelerikMvcTraining.App_Start
 
             builder.RegisterType<SchedulerTaskService>().InstancePerRequest();
 
+            builder.RegisterType<SchedulerMeetingService>().InstancePerRequest();
+
             builder.RegisterType<ProductRepositoryMock>().As<IProductRepository>();
 
             var container = builder.Build();

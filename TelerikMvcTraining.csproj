@@ -158,6 +158,13 @@
     <Compile Include="Migrations\202102021304587_AddSheduler.Designer.cs">
       <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102041313419_AddProScheduler.cs" />
+    <Compile Include="Migrations\202102041313419_AddProScheduler.Designer.cs">
+      <DependentUpon>202102041313419_AddProScheduler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Meeting.cs" />
+    <Compile Include="Models\MeetingAttendee.cs" />
+    <Compile Include="Services\SchedulerMeetingService.cs" />
     <Compile Include="Services\SchedulerTaskService.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Data\Repositories\IProductRepository.cs" />
@@ -203,6 +210,7 @@
     <Compile Include="Models\DetailProduct.cs" />
     <Compile Include="ViewModels\DetailProductViewModel.cs" />
     <Compile Include="ViewModels\FunnelSalesViewModel.cs" />
+    <Compile Include="ViewModels\MeetingViewModel.cs" />
     <Compile Include="ViewModels\ProductCategoriesViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\RegionSalesViewModel.cs" />
@@ -480,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102021304587_AddSheduler.resx">
       <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102041313419_AddProScheduler.resx">
+      <DependentUpon>202102041313419_AddProScheduler.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

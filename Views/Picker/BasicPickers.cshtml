@@ -11,17 +11,18 @@
     }
 </style>
 
-<div class="center-combo">
-    <h2>BasicDatePicker</h2>
-    <div class="demo-section k-content">
-        <h6>Show e-mails from:</h6>
-        @(Html.Kendo().DatePicker()
+    <div class="center-combo">
+        <h2>BasicDatePicker</h2>
+        <h5>The DatePickers enables the user to select a date from a calendar or through a direct input.</h5>
+        <div class="demo-section k-content">
+            <h6>Show e-mails from:</h6>
+            @(Html.Kendo().DatePicker()
           .Name("datepicker")
           .Value("10/10/2011")
           .HtmlAttributes(new { style = "width: 100%", title = "datepicker" })
         )
-        <h6 style="margin-top: 1em;">Add to archive mail from:</h6>
-        @(Html.Kendo().DatePicker()
+            <h6 style="margin-top: 1em;">Add to archive mail from:</h6>
+            @(Html.Kendo().DatePicker()
               .Name("monthpicker")
               .Start(CalendarView.Year)
               .Depth(CalendarView.Year)
@@ -30,28 +31,30 @@
               .DateInput()
               .HtmlAttributes(new { style = "width: 100%", title = "monthpicker" })
         )
-    </div>
+        </div>
 
-    <h2 style="margin-top: 80px;">BasicDateTimePicker</h2>
-    <div class="demo-section k-content">
-        <h6>Remind me on</h6>
-        @(Html.Kendo().DateTimePicker()
+        <h2 style="margin-top: 80px;">BasicDateTimePicker</h2>
+        <h5>The DateTimePicker allows the user to select a value from a calendar, a time drop-down list, or through direct input.</h5>
+        <div class="demo-section k-content">
+            <h6>Remind me on</h6>
+            @(Html.Kendo().DateTimePicker()
         .Name("datetimepicker")
         .Value(DateTime.Now)
         .HtmlAttributes(new { style = "width: 100%", title = "datetimepicker" })
         .DateInput()
 )
-    </div>
+        </div>
 
-    <h2 style="margin-top: 80px;">BasicDateRangePicker</h2>
-    <div id="example">
-        <div class="demo-section k-content wide" style="display: inline-block;">
-            <h6>Pick a date range</h6>
-            @(Html.Kendo().DateRangePicker()
+        <h2 style="margin-top: 80px;">BasicDateRangePicker</h2>
+        <h5>The DateRangePicker is a container for holding start and end date inputs.</h5>
+        <div id="example">
+            <div class="demo-section k-content wide" style="display: inline-block;">
+                <h6>Pick a date range</h6>
+                @(Html.Kendo().DateRangePicker()
           .Name("daterangepicker")
           .HtmlAttributes(new { style = "width: 100%", title = "daterangepicker" })
         )
-        </div>
+            </div>
 
+        </div>
     </div>
-</div>

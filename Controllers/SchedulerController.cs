@@ -14,9 +14,12 @@ namespace TelerikMvcTraining.Controllers
     {
         public SchedulerTaskService TaskService { get; set; }
 
-        public SchedulerController(SchedulerTaskService taskService)
+        public SchedulerMeetingService MeetingService { get; set; }
+
+        public SchedulerController(SchedulerTaskService taskService, SchedulerMeetingService meetingService)
         {
             TaskService = taskService;
+            MeetingService = meetingService;
         }
 
         public ActionResult BasicScheduler()
@@ -62,6 +65,41 @@ namespace TelerikMvcTraining.Controllers
             }
 
             return Json(new[] { task }.ToDataSourceResult(request, ModelState));
+        }
+
+        public virtual JsonResult Resources_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(MeetingService.GetAll().ToDataSourceResult(request));
+        }
+
+        public virtual JsonResult Resources_Destroy([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        {
+            if (ModelState.IsValid)
+            {
+                MeetingService.Delete(meeting, ModelState);
+            }
+
+            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
+        }
+
+        public virtual JsonResult Resources_Create([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        {
+            if (ModelState.IsValid)
+            {
+                MeetingService.Insert(meeting, ModelState);
+            }
+
+            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
+        }
+
+        public virtual JsonResult Resources_Update([DataSourceRequest] DataSourceRequest request, MeetingViewModel meeting)
+        {
+            if (ModelState.IsValid)
+            {
+                MeetingService.Update(meeting, ModelState);
+            }
+
+            return Json(new[] { meeting }.ToDataSourceResult(request, ModelState));
         }
     }
 }

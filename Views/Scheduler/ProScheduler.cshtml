@@ -1,7 +1,136 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ProScheduler";
 }
 
 <h2>ProScheduler</h2>
 
+@using Kendo.Mvc.UI
+
+<style>
+    .event-template img {
+        float: left;
+        margin: 0 8px;
+    }
+
+    body, h1, h2, h3 {
+        margin: 0px;
+    }
+</style>
+
+@(Html.Kendo().Scheduler<TelerikMvcTraining.ViewModels.MeetingViewModel>()
+    .Name("scheduler")
+    .Date(new DateTime(2020, 6, 13))
+    .StartTime(new DateTime(2020, 6, 13, 7, 00, 00))
+    .Height(600)
+    .Pdf(pdf => pdf
+        .FileName("Kendo UI Scheduler Export.pdf")
+        .ProxyURL(Url.Action("Pdf_Export_Save", "Scheduler"))
+    )
+    .Toolbar(t => t.Pdf())
+    .AllDayEventTemplateId("allday-event-template")
+    .EventTemplateId("allday-event-template")
+    .Views(views =>
+        {
+            views.DayView();
+            views.WeekView();
+            views.WorkWeekView();
+            views.MonthView(month =>
+            {
+                month.Selected(true);
+                month.EventsPerDay(8);
+                month.AdaptiveSlotHeight(true);
+                month.EventSpacing(5);
+                month.EventHeight(55);
+            });
+            views.AgendaView(agenda =>
+            {
+                agenda.EventTemplateId("agenda-template");
+            });
+        })
+        .Timezone("Etc/UTC")
+        .Resources(resource =>
+        {
+            resource.Add(m => m.Attendees)
+            .Title("Attendees")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .DataColorField("Color")
+            .Multiple(true)
+            .BindTo(new[] {
+                new { Text = "Alex", Value = 1, Color = "#f8a398" },
+                new { Text = "Bob", Value = 2, Color = "#51a0ed" },
+                new { Text = "Charlie", Value = 3, Color = "#56ca85" }
+            });
+
+            resource.Add(m => m.RoomID)
+                .Title("Room")
+                .DataTextField("Text")
+                .DataValueField("Value")
+                .DataColorField("Color")
+                .BindTo(new[] {
+                    new { Text = "Meeting Room 101", Value = 1, Color = "#f58ac0" },
+                    new { Text = "Meeting Room 201", Value = 2, Color = "#f58a8a" },
+                    new { Text = "Meeting Room 301", Value = 2, Color = "#f5c08a" }
+                });
+        })
+        .DataSource(d => d
+        .Model(m =>
+        {
+            m.Id(f => f.MeetingID);
+            m.Field(f => f.Title).DefaultValue("No title");
+            m.RecurrenceId(f => f.RecurrenceID);
+        })
+        .Read("Resources_Read", "Scheduler")
+        .Create("Resources_Create", "Scheduler")
+        .Destroy("Resources_Destroy", "Scheduler")
+        .Update("Resources_Update", "Scheduler")
+    )
+)
+
+
+<script type="text/javascript">
+
+    $(document).on("kendoReady", function () {
+        $("#scheduler").kendoTooltip({
+            filter: ".k-event:not(.k-event-drag-hint)",
+            position: "top",
+            width: 250,
+            content: kendo.template($('#template').html())
+        });
+    })
+</script>
+
+<script id="template" type="text/x-kendo-template">
+    #var element = target;#
+    #var uid = element.attr("data-uid");#
+    #var scheduler = target.closest("[data-role=scheduler]").data("kendoScheduler");#
+    #var model = scheduler.occurrenceByUid(uid);#
+
+    #if(model) {#
+    <strong>Title:</strong> #=model.title#
+    <br />
+    <strong>Start:</strong> #=kendo.format('{0:d}',model.start)#
+    <br />
+    <strong>End:</strong> #=kendo.format('{0:d}',model.end)#
+    <br />
+    #} else {#
+    <strong>No event data is available</strong>
+    #}#
+</script>
+
+<script id="allday-event-template" type="text/x-kendo-template">
+    <div class='event-template'>
+        #if(isAllDay){#
+        <img src="@Url.Content("~/Content/web/scheduler/24h.png")" />
+        #}else if((Math.abs(start - end) / 36e5) > 1){#
+        <img src="@Url.Content("~/Content/web/scheduler/1h.png")" />
+        #}#
+        <span>#: title #</span>
+    </div>
+</script>
+
+<script id="agenda-template" type="text/x-kendo-template">
+    <div class='event-template'>
+        <span>#: title #</span>
+    </div>
+</script>
