@@ -364,7 +364,6 @@
     <Content Include="Content\img\Scheduler\the-help.jpg" />
     <Content Include="Content\img\Scheduler\the-internship.jpg" />
     <Content Include="Content\img\Scheduler\wallflower.jpg" />
-    <Content Include="Content\img\Screenshot.png" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css" />
@@ -446,7 +445,6 @@
     <Content Include="Views\ComboBox\ProComboBox.cshtml" />
     <Content Include="Views\Scheduler\BasicScheduler.cshtml" />
     <Content Include="Views\Scheduler\ProScheduler.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
@@ -462,6 +460,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\fonts\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\lib\jquery\jquery-3.3.1.slim.min.map" />
