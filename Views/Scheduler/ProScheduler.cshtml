@@ -2,8 +2,6 @@
     ViewBag.Title = "ProScheduler";
 }
 
-<h2>ProScheduler</h2>
-
 @using Kendo.Mvc.UI
 
 <style>
@@ -46,9 +44,10 @@
             {
                 agenda.EventTemplateId("agenda-template");
             });
-        })
-        .Timezone("Etc/UTC")
-        .Resources(resource =>
+        }
+    )
+    .Timezone("Etc/UTC")
+    .Resources(resource =>
         {
             resource.Add(m => m.Attendees)
             .Title("Attendees")
@@ -72,18 +71,20 @@
                     new { Text = "Meeting Room 201", Value = 2, Color = "#f58a8a" },
                     new { Text = "Meeting Room 301", Value = 2, Color = "#f5c08a" }
                 });
-        })
-        .DataSource(d => d
-        .Model(m =>
+        }
+    )
+    .DataSource(d => d
+    .Model(m =>
         {
             m.Id(f => f.MeetingID);
             m.Field(f => f.Title).DefaultValue("No title");
             m.RecurrenceId(f => f.RecurrenceID);
-        })
-        .Read("Resources_Read", "Scheduler")
-        .Create("Resources_Create", "Scheduler")
-        .Destroy("Resources_Destroy", "Scheduler")
-        .Update("Resources_Update", "Scheduler")
+        }
+    )
+    .Read("Resources_Read", "Scheduler")
+    .Create("Resources_Create", "Scheduler")
+    .Destroy("Resources_Destroy", "Scheduler")
+    .Update("Resources_Update", "Scheduler")
     )
 )
 

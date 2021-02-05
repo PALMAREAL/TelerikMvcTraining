@@ -15,31 +15,31 @@
     }
 </style>
 
-<html> 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@ViewBag.Title - TelerikTraining</title>
-    	<link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/lib/bootstrap/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/css/FlippingCard.css")" rel="stylesheet" type="text/css" />
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
-	<script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
-	<script src="@Url.Content("~/Content/lib/bootstrap/js/bootstrap.min.js")"></script>
-	<script src="@Url.Content("~/Content/lib/kendo/kendo.modernizr.custom.js")"></script>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - TelerikTraining</title>
+    <link href="https://kendo.cdn.telerik.com/2020.3.1118/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/lib/bootstrap/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/FlippingCard.css")" rel="stylesheet" type="text/css" />
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.aspnetmvc.min.js"></script>
+    <script src="@Url.Content("~/Content/lib/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/lib/kendo/kendo.modernizr.custom.js")"></script>
 </head>
-    <body class="k-content">
-        <nav class="navbar navbar-inverse navbar-fixed-top" style=" box-shadow: 0px 0px 10px 0px;">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-menu"></span></button>
-                    @Html.ActionLink("TelerikTraining", "Index", "Home", new { area = "" }, new { @class = "navbar-brand-title" })
-                </div>
-                <div id="responsive-panel" class="navbar-left">
-                    @(Html.Kendo().Menu()
+<body class="k-content">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style=" box-shadow: 0px 0px 10px 0px;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-menu"></span></button>
+                @Html.ActionLink("TelerikTraining", "Index", "Home", new { area = "" }, new { @class = "navbar-brand-title" })
+            </div>
+            <div id="responsive-panel" class="navbar-left">
+                @(Html.Kendo().Menu()
                         .Name("Menu")
                         .Items(items =>
                         {
@@ -48,35 +48,35 @@
                             items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
                         })
                     )
-                </div>
             </div>
-        </nav>
-        <main>
-            <div class="container-fluid">
-                @RenderBody()
-            </div>
-        </main>
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </main>
 
-        <footer class="footer text-center d-flex align-items-center">
-            <div class="container pb-0">
-                <hr />
-                <p>Copyright &copy; @DateTime.Now.Year TelerikTraining</p>
-            </div>
-        </footer>
+    <footer class="footer text-center d-flex align-items-center">
+        <div class="container pb-0">
+            <hr />
+            <p>Copyright &copy; @DateTime.Now.Year TelerikTraining</p>
+        </div>
+    </footer>
 
-        <script>
-            $(document).ready(function () {
-                $("#responsive-panel").kendoResponsivePanel({
-                    breakpoint: 768,
-                    autoClose: false,
-                    orientation: "top"
-                });
+    <script>
+        $(document).ready(function () {
+            $("#responsive-panel").kendoResponsivePanel({
+                breakpoint: 768,
+                autoClose: false,
+                orientation: "top"
             });
-            function onclick(e) {
-                $("#responsive-panel").getKendoResponsivePanel().toggle();
-            }
-        </script>
+        });
+        function onclick(e) {
+            $("#responsive-panel").getKendoResponsivePanel().toggle();
+        }
+    </script>
 
-        @RenderSection("scripts", required: false)
-    </body>
+    @RenderSection("scripts", required: false)
+</body>
 </html>
