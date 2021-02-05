@@ -64,7 +64,8 @@
     }
 </style>
 
-@(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.DetailProductViewModel>()
+<div class="wrapper">
+    @(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.DetailProductViewModel>()
     .Name("grid")
     .Columns(columns =>
     {
@@ -161,48 +162,49 @@
     )
 )
 
+</div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    function error_handler(e) {
-        if (e.errors) {
-            var message = "Errors:\n";
-            $.each(e.errors, function (key, value) {
-                if ('errors' in value) {
-                    $.each(value.errors, function () {
-                        message += this + "\n";
-                    });
-                }
-            });
-            alert(message);
+        function error_handler(e) {
+            if (e.errors) {
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            }
         }
-    }
 
-    function onDataBound(e) {
-        var grid = this;
-        grid.table.find("tr").each(function () {
-            var dataItem = grid.dataItem(this);
-            var themeColor = dataItem.Discontinued ? 'success' : 'error';
-            var text = dataItem.Discontinued ? 'available' : 'not available';
+        function onDataBound(e) {
+            var grid = this;
+            grid.table.find("tr").each(function () {
+                var dataItem = grid.dataItem(this);
+                var themeColor = dataItem.Discontinued ? 'success' : 'error';
+                var text = dataItem.Discontinued ? 'available' : 'not available';
 
-            $(this).find('script').each(function () {
-                eval($(this).html());
+                $(this).find('script').each(function () {
+                    eval($(this).html());
+                });
+
+                $(this).find(".badgeTemplate").kendoBadge({
+                    themeColor: themeColor,
+                    text: text,
+                });
+
+
+                kendo.bind($(this), dataItem);
             });
+        }
 
-            $(this).find(".badgeTemplate").kendoBadge({
-                themeColor: themeColor,
-                text: text,
-            });
+        function returnFalse() {
+            return false;
+        }
 
-
-            kendo.bind($(this), dataItem);
-        });
-    }
-
-    function returnFalse() {
-        return false;
-    }
-
-</script>
+    </script>

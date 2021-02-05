@@ -24,11 +24,8 @@
     }
 </style>
 
-
-<h2>AdvancedGrid</h2>
-
-
-@(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.ProductViewModel>()
+<div class="wrapper">
+    @(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.ProductViewModel>()
       .Name("grid")
       .ToolBar(tools => tools.Search())
       .ToolBar(tools => tools.Excel())
@@ -52,7 +49,7 @@
       .Columns(columns =>
       {
           columns.Bound(c => c.ProductName).ClientTemplate(
-                @"<div class='product-photo' 
+                @"<div class='product-photo'
                     style='background-image: url(" + @Url.Content("~/Content/img/Products/#:data.ProductID#.jpg") +
                     ");'></div><div class='product-name'> &nbsp&nbsp #: ProductName #</div>")
               .Width(340);
@@ -79,3 +76,4 @@
           .PageSize(20)
       )
 )
+</div>

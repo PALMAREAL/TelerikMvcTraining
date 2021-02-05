@@ -15,11 +15,12 @@
     }
 </style>
 
-<div class="center-autocomplete">
-    <div class="demo-section k-content">
-        <h4>@Html.Label("countries", "Choose shipping countries:")</h4>
+<div class="wrapper">
+    <div class="center-autocomplete">
+        <div class="demo-section k-content">
+            <h4>@Html.Label("countries", "Choose shipping countries:")</h4>
 
-        @(Html.Kendo().AutoComplete()
+            @(Html.Kendo().AutoComplete()
           .Name("countries")
           .Filter("startswith")
           .Placeholder("Select country...")
@@ -77,5 +78,7 @@
           })
           .Separator(", ")
         )
+        </div>
     </div>
 </div>
+ 

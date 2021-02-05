@@ -20,12 +20,13 @@
     }
 </style>
 
-<div class="center-combo">
-    <div id="tshirt-view" class="demo-section k-content">
-        <h4>Customize your Kendo T-shirt</h4>
-        <img id="tshirt" alt="T-shirt image" src="@Url.Content("~/Content/img/Products/tShirt.png")" />
-        <h4>@Html.Label("fabric", "T-shirt Fabric")</h4>
-        @(Html.Kendo().ComboBox()
+<div class="wrapper">
+    <div class="center-combo">
+        <div id="tshirt-view" class="demo-section k-content">
+            <h4 style="text-align:center">Customize your Kendo T-shirt</h4>
+            <img id="tshirt" alt="T-shirt image" src="@Url.Content("~/Content/img/Products/tShirt.png")" />
+            <h4>@Html.Label("fabric", "T-shirt Fabric")</h4>
+            @(Html.Kendo().ComboBox()
           .Name("fabric")
           .Filter("contains")
           .Placeholder("Select fabric...")
@@ -51,8 +52,8 @@
 
     )
 
-        <h4 style="margin-top: 2em;">@Html.Label("size", "T-shirt Size")</h4>
-        @(Html.Kendo().ComboBox()
+            <h4 style="margin-top: 2em;">@Html.Label("size", "T-shirt Size")</h4>
+            @(Html.Kendo().ComboBox()
           .Name("size")
           .Placeholder("Select size...")
           .BindTo(new List<string>() {
@@ -68,17 +69,19 @@
           .HtmlAttributes(new { style="width:100%;" })
     )
 
-        <button class="k-button k-primary" id="get" style="margin-top: 2em; float: right;">Customize</button>
+            <button class="k-button k-primary" id="get" style="margin-top: 2em; float: right;">Customize</button>
+        </div>
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        var fabric = $("#fabric").data("kendoComboBox");
-        var size = $("#size").data("kendoComboBox");
+    <script>
+        $(document).ready(function () {
+            var fabric = $("#fabric").data("kendoComboBox");
+            var name = $("#fabric").data("kendoComboBox");
+            var size = $("#size").data("kendoComboBox");
 
-        $("#get").click(function () {
-            alert('Thank you! Your Choice is:\n\nFabric ID: ' + fabric.value() + ' and Size: ' + size.value());
+            $("#get").click(function () {
+                alert('Thank you! Your Choice is:\n\nFabric ID: ' + fabric.value() + ' Name: ' + name.text() + ' and Size: ' + size.value());
+            });
         });
-    });
-</script>
+    </script>

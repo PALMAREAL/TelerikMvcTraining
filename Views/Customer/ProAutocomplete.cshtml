@@ -15,10 +15,11 @@
     }
 </style>
 
-<div class="center-autocomplete">
-    <div class="demo-section k-content">
-        <h4>Products from a online service</h4>
-        @(Html.Kendo().AutoComplete()
+<div class="wrapper">
+    <div class="center-autocomplete">
+        <div class="demo-section k-content">
+            <h4>Products from a online service</h4>
+            @(Html.Kendo().AutoComplete()
           .Name("products")
           .DataTextField("ProductName")
           .Filter("contains")
@@ -35,13 +36,13 @@
               )
           )
     )
+        </div>
     </div>
-</div>
 
-<div class="center-autocomplete">
-    <div class="demo-section k-content">
-        <h4>Categories from local service</h4>
-        @(Html.Kendo().AutoComplete()
+    <div class="center-autocomplete">
+        <div class="demo-section k-content">
+            <h4>Categories from local service</h4>
+            @(Html.Kendo().AutoComplete()
           .Name("categoriesfromlocalservice")
           .DataTextField("CategoryName")
           .HtmlAttributes(new { style = "width:100%" })
@@ -54,13 +55,13 @@
               .ServerFiltering(false);
           })
     )
+        </div>
     </div>
-</div>
 
-<div class="center-autocomplete">
-    <div class="demo-section k-content">
-        <h4>Categories from database</h4>
-        @(Html.Kendo().AutoComplete()
+    <div class="center-autocomplete">
+        <div class="demo-section k-content">
+            <h4>Categories from database</h4>
+            @(Html.Kendo().AutoComplete()
           .Name("categories")
           .DataTextField("CategoryName")
           .HtmlAttributes(new { style = "width:100%" })
@@ -73,5 +74,6 @@
               .ServerFiltering(false);
           })
     )
+        </div>
     </div>
 </div>

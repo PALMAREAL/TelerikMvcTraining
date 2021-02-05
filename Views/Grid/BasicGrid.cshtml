@@ -2,7 +2,8 @@
     ViewBag.Title = "BasicGrid";
 }
 
-@(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.ProductViewModel>()
+<div class="wrapper">
+    @(Html.Kendo().Grid<TelerikMvcTraining.ViewModels.ProductViewModel>()
       .Name("grid")
       .Columns(columns =>
       {
@@ -24,3 +25,4 @@
           .Read(read => read.Action("Products_Read", "Product"))
       )
 )
+</div>

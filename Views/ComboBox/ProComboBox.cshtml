@@ -21,6 +21,7 @@
             text-transform: uppercase;
             font-size: 12px;
         }
+
     .center-dropdownlist {
         width: 600px;
         margin-left: auto;
@@ -29,12 +30,13 @@
     }
 </style>
 
-<div class="center-dropdownlist">
-    <div class="demo-section k-content">
-        <ul id="fieldlist">
-            <li>
-                <label for="categories">Categories:</label>
-                @(Html.Kendo().ComboBox()
+<div class="wrapper">
+    <div class="center-dropdownlist">
+        <div class="demo-section k-content">
+            <ul id="fieldlist">
+                <li>
+                    <label for="categories">Categories:</label>
+                    @(Html.Kendo().ComboBox()
               .Name("categories")
               .HtmlAttributes(new { style = "width:100%;" })
               .Placeholder("Select category...")
@@ -49,10 +51,10 @@
                   });
               })
         )
-            </li>
-            <li>
-                <label for="products">Products:</label>
-                @(Html.Kendo().ComboBox()
+                </li>
+                <li>
+                    <label for="products">Products:</label>
+                    @(Html.Kendo().ComboBox()
               .Name("products")
               .HtmlAttributes(new { style = "width:100%;" })
               .Placeholder("Select product...")
@@ -72,10 +74,10 @@
               .CascadeFrom("categories")
         )
 
-            </li>
-            <li>
-                <label for="orders">Orders:</label>
-                @(Html.Kendo().ComboBox()
+                </li>
+                <li>
+                    <label for="orders">Orders:</label>
+                    @(Html.Kendo().ComboBox()
               .Name("orders")
               .HtmlAttributes(new { style = "width:100%;" })
               .Placeholder("Select order...")
@@ -95,38 +97,40 @@
               .CascadeFrom("products")
         )
 
-            </li>
-            <li>
-                <button class="k-button k-primary" id="get">View Order</button>
-            </li>
+                </li>
+                <li>
+                    <button class="k-button k-primary" id="get">View Order</button>
+                </li>
+        </div>
     </div>
 </div>
-    <script>
-        function filterProducts() {
-            return {
-                categories: $("#categories").val(),
-                productFilter: $("#products").data("kendoComboBox").input.val()
-            };
-        }
 
-        function filterOrders() {
-            return {
-                products: $("#products").val(),
-                orderFilter: $("#orders").data("kendoComboBox").input.val()
-            };
-        }
+<script>
+    function filterProducts() {
+        return {
+            categories: $("#categories").val(),
+            productFilter: $("#products").data("kendoComboBox").input.val()
+        };
+    }
 
-        $(document).on("kendoReady", function () {
-            var categories = $("#categories").data("kendoComboBox"),
-                products = $("#products").data("kendoComboBox"),
-                orders = $("#orders").data("kendoComboBox");
+    function filterOrders() {
+        return {
+            products: $("#products").val(),
+            orderFilter: $("#orders").data("kendoComboBox").input.val()
+        };
+    }
 
-            $("#get").click(function () {
-                var categoryInfo = "\nCategory: { id: " + categories.value() + ", name: " + categories.text() + " }",
-                    productInfo = "\nProduct: { id: " + products.value() + ", name: " + products.text() + " }",
-                    orderInfo = "\nOrder: { id: " + orders.value() + ", name: " + orders.text() + " }";
+    $(document).on("kendoReady", function () {
+        var categories = $("#categories").data("kendoComboBox"),
+            products = $("#products").data("kendoComboBox"),
+            orders = $("#orders").data("kendoComboBox");
 
-                alert("Order details:\n" + categoryInfo + productInfo + orderInfo);
-            });
+        $("#get").click(function () {
+            var categoryInfo = "\nCategory: { id: " + categories.value() + ", name: " + categories.text() + " }",
+                productInfo = "\nProduct: { id: " + products.value() + ", name: " + products.text() + " }",
+                orderInfo = "\nOrder: { id: " + orders.value() + ", name: " + orders.text() + " }";
+
+            alert("Order details:\n" + categoryInfo + productInfo + orderInfo);
         });
-    </script>
+    });
+</script>

@@ -34,16 +34,16 @@
 }
 </style>
 
-<div id="team-schedule">
-    <div id="people">
-        <input checked type="checkbox" id="alex" aria-label="Alex" value="1">
-        <input checked type="checkbox" id="bob" aria-label="Bob" value="2">
-        <input checked type="checkbox" id="charlie" aria-label="Charlie" value="3">
+<div class="wrapper">
+    <div id="team-schedule">
+        <div id="people">
+            <input checked type="checkbox" id="alex" aria-label="Alex" value="1">
+            <input checked type="checkbox" id="bob" aria-label="Bob" value="2">
+            <input checked type="checkbox" id="charlie" aria-label="Charlie" value="3">
+        </div>
     </div>
-</div>
 
-
-@(Html.Kendo().Scheduler<TelerikMvcTraining.ViewModels.TaskViewModel>()
+    @(Html.Kendo().Scheduler<TelerikMvcTraining.ViewModels.TaskViewModel>()
     .Name("scheduler")
     .Date(new DateTime(2021, 2, 01))
     .StartTime(new DateTime(2021, 2, 01, 7, 00, 00))
@@ -89,10 +89,10 @@
         })
     )
 )
-
+</div>
 <script type="text/javascript">
 
-$(document).ready( function () {
+    $(document).ready(function () {
         $("#people :checkbox").change(function (e) {
             var checked = $.map($("#people :checked"), function (checkbox) {
                 return parseInt($(checkbox).val());
@@ -113,7 +113,7 @@ $(document).ready( function () {
 
             scheduler.dataSource.filter(filter);
         });
-})
+    })
 </script>
 
 

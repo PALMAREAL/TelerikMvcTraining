@@ -37,9 +37,9 @@
         }
     }
 </style>
-
-<div class="demo-section k-content wide">
-    @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.ProductCategoriesViewModel>()
+<div class="wrapper">
+    <div class="demo-section k-content wide">
+        @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.ProductCategoriesViewModel>()
         .Name("column-chart")
         .Title("Sales by Product Category Over Time")
         .Legend(legend => legend
@@ -76,8 +76,8 @@
         )
     )
 
-    <div class="flex-container demo-section k-content wide">
-        @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.FunnelSalesViewModel>()
+        <div class="flex-container demo-section k-content wide">
+            @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.FunnelSalesViewModel>()
             .Name("funnel-chart")
             .Title(t => t.Text("Sales Funnel 2019").Position(ChartTitlePosition.Top))
             .Series(
@@ -105,7 +105,7 @@
             .Legend(false)
             .Tooltip(tt => tt.Visible(true).Template("#= category #"))
         )
-        @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.RegionSalesViewModel>()
+            @(Html.Kendo().Chart<TelerikMvcTraining.ViewModels.RegionSalesViewModel>()
             .Name("donut-chart")
             .ChartArea(chartArea => chartArea
                 .Background("transparent"))
@@ -134,7 +134,7 @@
             )
             .SeriesColors("#166f99", "#2185b4", "#319fd2", "#3eaee2", "#89CFF0", "#B0DFE5")
         )
-        @(Html.Kendo().Chart< TelerikMvcTraining.ViewModels.SalesPerformersViewModel> ()
+            @(Html.Kendo().Chart< TelerikMvcTraining.ViewModels.SalesPerformersViewModel> ()
             .Name("bar-chart")
             .Title("Top 5 Sales Performers")
             .Legend(legend => legend
@@ -161,134 +161,134 @@
                 .Template("#= formatTooltip(value) #")
             )
         )
-
-        @(Html.Kendo().StockChart<TelerikMvcTraining.ViewModels.StockDataPointViewModel>()
-        .Name("stock-chart")
-        .Title("Company Stocks")
-        .DataSource(ds => ds.Read(read => read
-            .Action("BoeingStockDataRead", "Product")
-        ))
-        .DateField("Date")
-        .Series(series =>
-        {
-            series.Candlestick(s => s.Open, s => s.High, s => s.Low, s => s.Close).ColorHandler("itemColor");;
-        })
-        .Navigator(nav => nav
+            @(Html.Kendo().StockChart<TelerikMvcTraining.ViewModels.StockDataPointViewModel>()
+            .Name("stock-chart")
+            .Title("Company Stocks")
+            .DataSource(ds => ds.Read(read => read
+                .Action("BoeingStockDataRead", "Product")
+            ))
+            .DateField("Date")
             .Series(series =>
             {
-                series.Area(s => s.Close).Color("#3eaee2");
+                series.Candlestick(s => s.Open, s => s.High, s => s.Low, s => s.Close).ColorHandler("itemColor");;
             })
-            .Select(
-                DateTime.Parse("2009/02/05"),
-                DateTime.Parse("2011/10/07")
+            .Navigator(nav => nav
+                .Series(series =>
+                {
+                    series.Area(s => s.Close).Color("#3eaee2");
+                })
+                .Select(
+                    DateTime.Parse("2009/02/05"),
+                    DateTime.Parse("2011/10/07")
+                )
             )
-        )
     )
+        </div>
     </div>
 </div>
 
-<script>
-    function formatSales(value) {
-        if (value == 0) {
-            return 0;
-        }
-        else {
-            // hundreds
-            if (value <= 999) {
-                return value;
+    <script>
+        function formatSales(value) {
+            if (value == 0) {
+                return 0;
             }
-            // thousands
-            else if (value >= 1000 && value <= 999999) {
-                return "$" + (value / 1000) + ".00K";
+            else {
+                // hundreds
+                if (value <= 999) {
+                    return value;
+                }
+                // thousands
+                else if (value >= 1000 && value <= 999999) {
+                    return "$" + (value / 1000) + ".00K";
+                }
+                // millions
+                else if (value >= 1000000 && value <= 999999999) {
+                    return "$" + (value / 1000000) + ".00M";
+                }
             }
-            // millions
-            else if (value >= 1000000 && value <= 999999999) {
-                return "$" + (value / 1000000) + ".00M";
-            }
-        }
-    };
+        };
 
-    function formatPerformersSales(value) {
-        if (value == 0) {
-            return 0;
-        }
-        else {
-            // hundreds
-            if (value <= 999) {
-                return value;
+        function formatPerformersSales(value) {
+            if (value == 0) {
+                return 0;
             }
-            // thousands
-            else if (value >= 1000 && value <= 999999) {
-                return "$" + (value / 1000) + "K";
+            else {
+                // hundreds
+                if (value <= 999) {
+                    return value;
+                }
+                // thousands
+                else if (value >= 1000 && value <= 999999) {
+                    return "$" + (value / 1000) + "K";
+                }
+                // millions
+                else if (value >= 1000000 && value <= 999999999) {
+                    return "$" + (value / 1000000) + "M";
+                }
             }
-            // millions
-            else if (value >= 1000000 && value <= 999999999) {
-                return "$" + (value / 1000000) + "M";
-            }
-        }
-    };
+        };
 
-    function formatTooltip(value) {
-        return "$" + kendo.toString(value, "#,##");
-    };
+        function formatTooltip(value) {
+            return "$" + kendo.toString(value, "#,##");
+        };
 
-    function categoryAxisLabelTemplate(value) {
-        return value.split(" ").join("\n");
-    };
+        function categoryAxisLabelTemplate(value) {
+            return value.split(" ").join("\n");
+        };
 
 
-    function setSalesPerformersBarsColor(point) {
-        switch (point.index) {
-            case 0: {
-                return "#2185b4";
-            };
-            case 1: {
-                return "#319fd2";
-            };
-            case 2: {
-                return "#3eaee2";
-            };
-            case 3: {
-                return "#89CFF0";
-            };
-            case 4: {
-                return "#B0DFE5";
+        function setSalesPerformersBarsColor(point) {
+            switch (point.index) {
+                case 0: {
+                    return "#2185b4";
+                };
+                case 1: {
+                    return "#319fd2";
+                };
+                case 2: {
+                    return "#3eaee2";
+                };
+                case 3: {
+                    return "#89CFF0";
+                };
+                case 4: {
+                    return "#B0DFE5";
+                };
             };
         };
-    };
 
-    var prevItemValue;
-    function itemColor(e) {
-        var currentItemValue = e.dataItem;
-        var currentLargerThenPrev = !prevItemValue || currentItemValue.Volume >= prevItemValue.Volume;
-        if (currentItemValue.Volume) {
-            prevItemValue = currentItemValue;
+        var prevItemValue;
+        function itemColor(e) {
+            var currentItemValue = e.dataItem;
+            var currentLargerThenPrev = !prevItemValue || currentItemValue.Volume >= prevItemValue.Volume;
+            if (currentItemValue.Volume) {
+                prevItemValue = currentItemValue;
+            }
+            return currentLargerThenPrev ? '#B0DFE5' : '#2185b4';
         }
-        return currentLargerThenPrev ? '#B0DFE5' : '#2185b4';
-    }
 
-    $(window).on("resize", function () {
-        setDonutChartLabelsPosition()
-    });
+        $(window).on("resize", function () {
+            setDonutChartLabelsPosition()
+        });
 
-    $(document).on("kendoReady", function () {
-        setDonutChartLabelsPosition()
-    });
+        $(document).on("kendoReady", function () {
+            setDonutChartLabelsPosition()
+        });
 
-    function setDonutChartLabelsPosition() {
-        var donutChart = $("#donut-chart").data("kendoChart");
-        var donutSeries = donutChart.options.series;
-        if ($(window).width() <= 716) {
-            donutSeries[0].labels.position = "center";
-            donutChart.setOptions({
-                series: donutSeries
-            });
+        function setDonutChartLabelsPosition() {
+            var donutChart = $("#donut-chart").data("kendoChart");
+            var donutSeries = donutChart.options.series;
+            if ($(window).width() <= 716) {
+                donutSeries[0].labels.position = "center";
+                donutChart.setOptions({
+                    series: donutSeries
+                });
+            }
+            else {
+                donutSeries[0].labels.position = "outsideEnd";
+                donutChart.setOptions({
+                    series: donutSeries
+                });
+            }
         }
-        else {
-            donutSeries[0].labels.position = "outsideEnd";
-            donutChart.setOptions({
-                series: donutSeries
-            });
-        }
-    }
-</script>
+    </script>
