@@ -245,6 +245,31 @@
     <Content Include="Content\img\CountryFlags\it.png" />
     <Content Include="Content\img\CountryFlags\us.png" />
     <Content Include="Content\img\gradient.jpg" />
+    <Content Include="Content\img\Gradients\Aqua Splash.png" />
+    <Content Include="Content\img\Gradients\Clean Mirror.png" />
+    <Content Include="Content\img\Gradients\Cloudy Knoxville.png" />
+    <Content Include="Content\img\Gradients\Cochiti Lake.png" />
+    <Content Include="Content\img\Gradients\Deep Relief.png" />
+    <Content Include="Content\img\Gradients\Eternal Constance.png" />
+    <Content Include="Content\img\Gradients\Everlasting Sky.png" />
+    <Content Include="Content\img\Gradients\Fly High.png" />
+    <Content Include="Content\img\Gradients\Fresh Milk.png" />
+    <Content Include="Content\img\Gradients\Great Whale.png" />
+    <Content Include="Content\img\Gradients\Happy Fisher.png" />
+    <Content Include="Content\img\Gradients\Healthy Water.png" />
+    <Content Include="Content\img\Gradients\Heavy Rain.png" />
+    <Content Include="Content\img\Gradients\Juicy Peach.png" />
+    <Content Include="Content\img\Gradients\Lady Lips.png" />
+    <Content Include="Content\img\Gradients\Morning Salad.png" />
+    <Content Include="Content\img\Gradients\Nega.png" />
+    <Content Include="Content\img\Gradients\Night Sky.png" />
+    <Content Include="Content\img\Gradients\Passionate Bed.png" />
+    <Content Include="Content\img\Gradients\Plum Plate.png" />
+    <Content Include="Content\img\Gradients\Saint Petersberg.png" />
+    <Content Include="Content\img\Gradients\Strong Bliss.png" />
+    <Content Include="Content\img\Gradients\Vicious Stance.png" />
+    <Content Include="Content\img\Gradients\Warm Flame.png" />
+    <Content Include="Content\img\Gradients\Winter Neva.png" />
     <Content Include="Content\img\Organization\001-account.svg" />
     <Content Include="Content\img\Organization\002-balance sheet.svg" />
     <Content Include="Content\img\Organization\003-conference.svg" />
@@ -385,6 +410,7 @@
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css.map" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css.map" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\fonts\Alansky.ttf" />
     <None Include="packages.config" />
     <Content Include="Content\lib\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Content\lib\bootstrap\js\bootstrap.bundle.min.js" />
@@ -467,7 +493,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\fonts\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
