@@ -18,7 +18,7 @@
         <h6>Show e-mails from:</h6>
         @(Html.Kendo().DatePicker()
           .Name("datepicker")
-          .Value("10/10/2011")
+          .Value(DateTime.Now)
           .HtmlAttributes(new { style = "width: 100%", title = "datepicker" })
         )
         <h6 style="margin-top: 1em;">Add to archive mail from:</h6>
@@ -27,7 +27,7 @@
               .Start(CalendarView.Year)
               .Depth(CalendarView.Year)
               .Format("MMMM yyyy")
-              .Value("November 2011")
+              .Value(DateTime.Now)
               .DateInput()
               .HtmlAttributes(new { style = "width: 100%", title = "monthpicker" })
         )
