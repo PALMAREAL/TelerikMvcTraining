@@ -19,6 +19,7 @@ h1 {
     width: 90%;
     margin: 0 auto;
     max-width: 100rem;
+    margin-top: 8rem;
 }
 
 .cols {
@@ -83,7 +84,7 @@ h1 {
     content: '';
     display: block;
     opacity: .6;
-    background-color: #000;
+    background-color: #a520207d;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 10px;
