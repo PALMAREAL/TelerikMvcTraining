@@ -8,12 +8,12 @@ namespace TelerikMvcTraining.ViewModels
 {
     public class CategoryViewModel : ViewModel<Category>
     {
-        public int CategoryID { get; set; }
+        public int CategoryIDVm { get; set; }
 
-        public string CategoryName { get; set; }
+        public string CategoryNameVm { get; set; }
 
-        public string Description { get; set; }
+        public string DescriptionVm { get; set; }
 
-        public byte[] Picture { get; set; }
+        public byte[] PictureVm { get; set; }
     }
 }

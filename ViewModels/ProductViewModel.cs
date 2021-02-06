@@ -9,34 +9,34 @@ namespace TelerikMvcTraining.ViewModels
 {
     public class ProductViewModel : ViewModel<Product>
     {
-        public int ProductID { get; set; }
+        public int ProductIDVm { get; set; }
 
         [Required(ErrorMessage = "{0} is required.")]
         [StringLength(50, MinimumLength = 1, ErrorMessage = " The Name should be a maximum of 50 characters")]
         [Display(Name = "Name")]
-        public string ProductName { get; set; }
+        public string ProductNameVm { get; set; }
 
         [Display(Name = "Supplier")]
-        public int? SupplierID { get; set; }
+        public int? SupplierIDVm { get; set; }
 
         [Display(Name = "Category")]
-        public int? CategoryID { get; set; }
+        public int? CategoryIDVm { get; set; }
 
         [Required(ErrorMessage = "{0} is required.")]
-        public string QuantityPerUnit { get; set; }
+        public string QuantityPerUnitVm { get; set; }
 
         [Display(Name = "Price")]
-        public decimal? UnitPrice { get; set; }
+        public decimal? UnitPriceVm { get; set; }
 
         [Display(Name = "In Stock")]
-        public uint? UnitsInStock { get; set; }
+        public uint? UnitsInStockVm { get; set; }
 
         [Display(Name = "Units on order")]
-        public uint? UnitsOnOrder { get; set; }
+        public uint? UnitsOnOrderVm { get; set; }
 
-        public uint? ReorderLevel { get; set; }
+        public uint? ReorderLevelVm { get; set; }
 
         [Required(ErrorMessage = "{0} is required.")]
-        public bool Discontinued { get; set; }
+        public bool DiscontinuedVm { get; set; }
     }
 }

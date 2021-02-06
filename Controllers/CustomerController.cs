@@ -32,9 +32,9 @@ namespace TelerikMvcTraining.Controllers
         {
             var categories = db.Categories.Select(c => new CategoryViewModel
             {
-                CategoryID = c.CategoryID,
-                CategoryName = c.CategoryName,
-                Description = c.Description
+                CategoryIDVm = c.CategoryID,
+                CategoryNameVm = c.CategoryName,
+                DescriptionVm = c.Description
             });
 
             return Json(categories, JsonRequestBehavior.AllowGet);

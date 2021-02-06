@@ -27,16 +27,16 @@ namespace TelerikMvcTraining.Data.Repositories
         {
             var result = Enumerable.Range(0, 100).Select(i => new ProductViewModel
             {
-                ProductID = i,
-                SupplierID = i + 1,
-                ProductName = "SamsungTablet" + "  A." + (i * 2),
-                UnitPrice = i + 25,
-                Discontinued = false,
-                CategoryID = i + 2,
-                QuantityPerUnit = (i + 10).ToString(),
-                UnitsInStock = (uint?)(i + 3),
-                UnitsOnOrder = (uint?)(i + 4),
-                ReorderLevel = (uint?)(i + 20)
+                ProductIDVm = i,
+                SupplierIDVm = i + 1,
+                ProductNameVm = "SamsungTablet" + "  A." + (i * 2),
+                UnitPriceVm = i + 25,
+                DiscontinuedVm = false,
+                CategoryIDVm = i + 2,
+                QuantityPerUnitVm = (i + 10).ToString(),
+                UnitsInStockVm  = (uint?)(i + 3),
+                UnitsOnOrderVm = (uint?)(i + 4),
+                ReorderLevelVm = (uint?)(i + 20)
             });
 
             return result;
@@ -56,8 +56,8 @@ namespace TelerikMvcTraining.Data.Repositories
                 UnitsOnOrder = i + 4,
                 Category = new CategoryViewModel()
                 {
-                    CategoryID = 1,
-                    CategoryName = "Tablet"
+                    CategoryIDVm = 1,
+                    CategoryNameVm = "Tablet"
                 },
 
                 Country = new CountryViewModel()
@@ -135,14 +135,14 @@ namespace TelerikMvcTraining.Data.Repositories
         public IEnumerable<CategoryViewModel> GetCategoriesData()
         {
             return new CategoryViewModel[] {
-            new CategoryViewModel() { CategoryID = 1, CategoryName = "Beverages", Description = "Soft drinks, coffees, teas, beers, and ales" },
-            new CategoryViewModel() { CategoryID = 2, CategoryName = "Condiments", Description = "Sweet and savory sauces, relishes, spreads, and seasonings" },
-            new CategoryViewModel() { CategoryID = 3, CategoryName = "Confections", Description = "Desserts, candies, and sweet breads" },
-            new CategoryViewModel() { CategoryID = 4, CategoryName = "Dairy Products", Description = "Cheeses" },
-            new CategoryViewModel() { CategoryID = 5, CategoryName = "Grains/Cereals", Description = "Breads, crackers, pasta, and cereal" },
-            new CategoryViewModel() { CategoryID = 6, CategoryName = "Meat/Poultry", Description = "Prepared meats" },
-            new CategoryViewModel() { CategoryID = 7, CategoryName = "Produce", Description = "Dried fruit and bean curd" },
-            new CategoryViewModel() { CategoryID = 8, CategoryName = "Seafood", Description = "Seaweed and fish" }
+            new CategoryViewModel() { CategoryIDVm = 1, CategoryNameVm = "Beverages", DescriptionVm = "Soft drinks, coffees, teas, beers, and ales" },
+            new CategoryViewModel() { CategoryIDVm = 2, CategoryNameVm = "Condiments", DescriptionVm = "Sweet and savory sauces, relishes, spreads, and seasonings" },
+            new CategoryViewModel() { CategoryIDVm = 3, CategoryNameVm = "Confections", DescriptionVm = "Desserts, candies, and sweet breads" },
+            new CategoryViewModel() { CategoryIDVm = 4, CategoryNameVm = "Dairy Products", DescriptionVm = "Cheeses" },
+            new CategoryViewModel() { CategoryIDVm = 5, CategoryNameVm = "Grains/Cereals", DescriptionVm = "Breads, crackers, pasta, and cereal" },
+            new CategoryViewModel() { CategoryIDVm = 6, CategoryNameVm = "Meat/Poultry", DescriptionVm = "Prepared meats" },
+            new CategoryViewModel() { CategoryIDVm = 7, CategoryNameVm = "Produce", DescriptionVm = "Dried fruit and bean curd" },
+            new CategoryViewModel() { CategoryIDVm = 8, CategoryNameVm = "Seafood", DescriptionVm = "Seaweed and fish" }
             };
         }
     }
