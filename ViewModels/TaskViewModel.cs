@@ -7,13 +7,32 @@ using TelerikMvcTraining.Models;
 
 namespace TelerikMvcTraining.ViewModels
 {
-    public class TaskViewModel : ISchedulerEvent
+    public class TaskViewModel : ViewModel<Task>, ISchedulerEvent
     {
+        private DateTime start;
+
+        private DateTime end;
+
         public int TaskID { get; set; }
+
         public string Title { get; set; }
+
         public string Description { get; set; }
 
-        private DateTime start;
+        public string StartTimezone { get; set; }
+
+        public string EndTimezone { get; set; }
+
+        public string RecurrenceRule { get; set; }
+
+        public int? RecurrenceID { get; set; }
+
+        public string RecurrenceException { get; set; }
+
+        public bool IsAllDay { get; set; }
+
+        public int? OwnerID { get; set; }
+
         public DateTime Start
         {
             get
@@ -26,10 +45,6 @@ namespace TelerikMvcTraining.ViewModels
             }
         }
 
-        public string StartTimezone { get; set; }
-
-        private DateTime end;
-
         public DateTime End
         {
             get
@@ -41,13 +56,6 @@ namespace TelerikMvcTraining.ViewModels
                 end = value.ToUniversalTime();
             }
         }
-
-        public string EndTimezone { get; set; }
-        public string RecurrenceRule { get; set; }
-        public int? RecurrenceID { get; set; }
-        public string RecurrenceException { get; set; }
-        public bool IsAllDay { get; set; }
-        public int? OwnerID { get; set; }
 
         public Task ToEntity()
         {

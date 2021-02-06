@@ -7,7 +7,7 @@ using TelerikMvcTraining.Models;
 
 namespace TelerikMvcTraining.ViewModels
 {
-    public class MeetingViewModel : ISchedulerEvent
+    public class MeetingViewModel : ViewModel<Meeting>, ISchedulerEvent
     {
         public int MeetingID { get; set; }
 
