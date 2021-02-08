@@ -225,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\FlippingCard.css" />
+    <Content Include="Content\css\WorkingOn.css" />
     <Content Include="Content\img\Categories\1.jpg" />
     <Content Include="Content\img\Categories\2.jpg" />
     <Content Include="Content\img\Categories\3.jpg" />
@@ -233,6 +234,7 @@
     <Content Include="Content\img\Categories\6.jpg" />
     <Content Include="Content\img\Categories\7.jpg" />
     <Content Include="Content\img\Categories\8.jpg" />
+    <Content Include="Content\img\coming soon.jpg" />
     <Content Include="Content\img\Components\barcharts.svg" />
     <Content Include="Content\img\Components\daterangepicker.svg" />
     <Content Include="Content\img\Components\dropdownlist.svg" />
@@ -401,6 +403,7 @@
     <Content Include="Content\img\Scheduler\the-help.jpg" />
     <Content Include="Content\img\Scheduler\the-internship.jpg" />
     <Content Include="Content\img\Scheduler\wallflower.jpg" />
+    <Content Include="Content\js\workingon.js" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\lib\bootstrap\css\bootstrap-reboot.css" />
