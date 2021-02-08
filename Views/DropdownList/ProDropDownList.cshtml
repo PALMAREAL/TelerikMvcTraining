@@ -83,13 +83,13 @@
             .Name("categories")
             .HtmlAttributes(new { style = "width:100%" })
             .OptionLabel("Select category...")
-            .DataTextField("CategoryName")
-            .DataValueField("CategoryID")
+            .DataTextField("CategoryNameVm")
+            .DataValueField("CategoryIDVm")
             .Height(310)
-            .Template("<span class=\"k-state-default\" style=\"background-image: url(" + Url.Content("~/Content/img/Categories/") + "#:data.CategoryID#.jpg" + ");\" ></span>" +
-                "<span class=\"k-state-default\" style=\"padding-left: 15px;\"><h3>#: data.CategoryName #</h3></span>")
+            .Template("<span class=\"k-state-default\" style=\"background-image: url(" + Url.Content("~/Content/img/Categories/") + "#:data.CategoryIDVm#.jpg" + ");\" ></span>" +
+                "<span class=\"k-state-default\" style=\"padding-left: 15px;\"><h3>#: data.CategoryNameVm#</h3></span>")
             .ValueTemplate("<span class=\"selected-value\" style=\"background-image: url(" + Url.Content("~/Content/img/Categories/") +
-                            "#:data.CategoryID#.jpg" + ");\" ></span>" + "<span>#:data.CategoryName#</span>")
+                            "#:data.CategoryIDVm#.jpg" + ");\" ></span>" + "<span>#:data.CategoryNameVm#</span>")
             .DataSource(source =>
             {
                 source.Read(read =>
@@ -110,8 +110,8 @@
                 .Height(310)
                 //.Template("<span class=\"k-state-default\" style=\"background-image: url(" + Url.Content("~/Content/img/Products/") + "#:data.ProductID#.jpg" + ");\" ></span>" +
                 //"<span class=\"k-state-default\" style=\"padding-left: 15px;\"><h3>#: data.ProductName #</h3></span>")
-                .ValueTemplate("<span class=\"selected-value\" style=\"background-image: url(" + Url.Content("~/Content/img/Products/") +
-                            "#:data.ProductID#.jpg" + ");\" ></span>" + "<span>#:data.ProductName#</span>")
+                //.ValueTemplate("<span class=\"selected-value\" style=\"background-image: url(" + Url.Content("~/Content/img/Products/") +
+                //            "#:data.ProductID#.jpg" + ");\" ></span>" + "<span>#:data.ProductName#</span>")
                 .DataSource(source => source
                           .Custom()
                           .Type("odata")

@@ -44,7 +44,7 @@
             <h4>Categories from local service</h4>
             @(Html.Kendo().AutoComplete()
           .Name("categoriesfromlocalservice")
-          .DataTextField("CategoryName")
+          .DataTextField("CategoryNameVm")
           .HtmlAttributes(new { style = "width:100%" })
           .Filter("contains")
           .DataSource(source => {
@@ -63,7 +63,7 @@
             <h4>Categories from database</h4>
             @(Html.Kendo().AutoComplete()
           .Name("categories")
-          .DataTextField("CategoryName")
+          .DataTextField("CategoryNameVm")
           .HtmlAttributes(new { style = "width:100%" })
           .Filter("contains")
           .DataSource(source => {

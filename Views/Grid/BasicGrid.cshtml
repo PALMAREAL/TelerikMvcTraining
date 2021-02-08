@@ -7,15 +7,15 @@
       .Name("grid")
       .Columns(columns =>
       {
-          columns.Bound(c => c.ProductName);
-          columns.Bound(c => c.SupplierID);
-          columns.Bound(c => c.CategoryID);
-          columns.Bound(c => c.QuantityPerUnit);
-          columns.Bound(c => c.UnitPrice);
-          columns.Bound(c => c.UnitsInStock);
-          columns.Bound(c => c.UnitsOnOrder);
-          columns.Bound(c => c.ReorderLevel);
-          columns.Bound(c => c.Discontinued);
+          columns.Bound(c => c.ProductNameVm);
+          columns.Bound(c => c.SupplierIDVm);
+          columns.Bound(c => c.CategoryIDVm);
+          columns.Bound(c => c.QuantityPerUnitVm);
+          columns.Bound(c => c.UnitPriceVm);
+          columns.Bound(c => c.UnitsInStockVm);
+          columns.Bound(c => c.UnitsOnOrderVm);
+          columns.Bound(c => c.ReorderLevelVm);
+          columns.Bound(c => c.DiscontinuedVm);
       })
       .Scrollable()
       .Pageable()

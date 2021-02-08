@@ -77,7 +77,7 @@
         columns.Bound(p => p.UnitPrice).Title("Price").Width(105);
         columns.Bound(p => p.Discontinued).Title("In Stock").Width(130)
                             .ClientTemplate("<span id='badge_#=ProductID#' class='badgeTemplate'></span>");
-        columns.Bound(p => p.Category.CategoryName).Title("Category").EditorTemplateName("ClientCategoryEditor").ClientGroupHeaderTemplate("Category: #=data.value#, Total Sales: #=kendo.format('{0:c}', data.aggregates.TotalSales.sum)#").Width(125);
+        columns.Bound(p => p.Category.CategoryNameVm).Title("Category").EditorTemplateName("ClientCategoryEditor").ClientGroupHeaderTemplate("Category: #=data.value#, Total Sales: #=kendo.format('{0:c}', data.aggregates.TotalSales.sum)#").Width(125);
         columns.Bound(p => p.CustomerRating).Title("Rating").Width(140).Editable("returnFalse").ClientTemplate(Html.Kendo().Rating()
                 .Name("rating_#=ProductID#")
                 .Min(1)
@@ -150,10 +150,10 @@
             model.Field(p => p.ProductID).Editable(false);
             model.Field(p => p.Discontinued).Editable(false);
             model.Field(p => p.TotalSales).Editable(false);
-            model.Field(p => p.Category).DefaultValue(new CategoryViewModel() { CategoryID = 8, CategoryName = "Seafood" });
+            model.Field(p => p.Category).DefaultValue(new CategoryViewModel() { CategoryIDVm = 8, CategoryNameVm = "Seafood" });
             model.Field(p => p.Country).DefaultValue(new CountryViewModel() { CountryNameLong = "Bulgaria", CountryNameShort = "bg" });
         })
-        .Group(group=>group.Add("Category.CategoryName", typeof(string), System.ComponentModel.ListSortDirection.Descending))
+        .Group(group=>group.Add("Category.CategoryNameVm", typeof(string), System.ComponentModel.ListSortDirection.Descending))
         .Aggregates(agg=>agg.Add(field=>field.TotalSales).Sum())
         .Create("DetailProducts_Create", "Product")
         .Read("DetailProducts_Read", "Product")
