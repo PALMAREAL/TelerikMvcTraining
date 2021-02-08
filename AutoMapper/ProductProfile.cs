@@ -15,16 +15,16 @@ namespace TelerikMvcTraining.AutoMapper
         private void MapProduct()
         {
             CreateMap<ProductViewModel, Product>()
-                .ForMember(dest => dest.ProductID, src => src.MapFrom(o => o.ProductIDVm))
-                .ForMember(dest => dest.ProductName, src => src.MapFrom(o => o.ProductNameVm))
-                .ForMember(dest => dest.SupplierID, src => src.MapFrom(o => o.SupplierIDVm))
-                .ForMember(dest => dest.CategoryID, src => src.MapFrom(o => o.CategoryIDVm))
-                .ForMember(dest => dest.QuantityPerUnit, src => src.MapFrom(o => o.QuantityPerUnitVm))
-                .ForMember(dest => dest.UnitPrice, src => src.MapFrom(o => o.UnitPriceVm))
-                .ForMember(dest => dest.UnitsInStock, src => src.MapFrom(o => o.UnitsInStockVm))
-                .ForMember(dest => dest.UnitsOnOrder, src => src.MapFrom(o => o.UnitsOnOrderVm))
-                .ForMember(dest => dest.ReorderLevel, src => src.MapFrom(o => o.ReorderLevelVm))
-                .ForMember(dest => dest.Discontinued, src => src.MapFrom(o => o.DiscontinuedVm)).ReverseMap();
+                .ForMember(dest => dest.ProductID, o => o.MapFrom(src => src.ProductIDVm))
+                .ForMember(dest => dest.ProductName, o => o.MapFrom(src => src.ProductNameVm))
+                .ForMember(dest => dest.SupplierID, o => o.MapFrom(src => src.SupplierIDVm))
+                .ForMember(dest => dest.CategoryID, o => o.MapFrom(src => src.CategoryIDVm))
+                .ForMember(dest => dest.QuantityPerUnit, o => o.MapFrom(src => src.QuantityPerUnitVm))
+                .ForMember(dest => dest.UnitPrice, o => o.MapFrom(src => src.UnitPriceVm))
+                .ForMember(dest => dest.UnitsInStock, o => o.MapFrom(src => src.UnitsInStockVm))
+                .ForMember(dest => dest.UnitsOnOrder, o => o.MapFrom(src => src.UnitsOnOrderVm))
+                .ForMember(dest => dest.ReorderLevel, o => o.MapFrom(src => src.ReorderLevelVm))
+                .ForMember(dest => dest.Discontinued, o => o.MapFrom(src => src.DiscontinuedVm)).ReverseMap();
         }
     }
 }

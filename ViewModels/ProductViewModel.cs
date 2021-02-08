@@ -38,5 +38,36 @@ namespace TelerikMvcTraining.ViewModels
 
         [Required(ErrorMessage = "{0} is required.")]
         public bool DiscontinuedVm { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is ProductViewModel model &&
+                   ProductIDVm == model.ProductIDVm &&
+                   ProductNameVm == model.ProductNameVm &&
+                   SupplierIDVm == model.SupplierIDVm &&
+                   CategoryIDVm == model.CategoryIDVm &&
+                   QuantityPerUnitVm == model.QuantityPerUnitVm &&
+                   UnitPriceVm == model.UnitPriceVm &&
+                   UnitsInStockVm == model.UnitsInStockVm &&
+                   UnitsOnOrderVm == model.UnitsOnOrderVm &&
+                   ReorderLevelVm == model.ReorderLevelVm &&
+                   DiscontinuedVm == model.DiscontinuedVm;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = -1055475449;
+            hashCode = hashCode * -1521134295 + ProductIDVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(ProductNameVm);
+            hashCode = hashCode * -1521134295 + SupplierIDVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + CategoryIDVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(QuantityPerUnitVm);
+            hashCode = hashCode * -1521134295 + UnitPriceVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + UnitsInStockVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + UnitsOnOrderVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + ReorderLevelVm.GetHashCode();
+            hashCode = hashCode * -1521134295 + DiscontinuedVm.GetHashCode();
+            return hashCode;
+        }
     }
 }

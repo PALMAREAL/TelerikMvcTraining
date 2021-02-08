@@ -18,9 +18,9 @@ namespace TelerikMvcTraining.AutoMapper
         private void MapCategory()
         {
             CreateMap<CategoryViewModel, Category>()
-                .ForMember(dest => dest.CategoryID, src => src.MapFrom(o => o.CategoryIDVm))
-                .ForMember(dest => dest.CategoryName, src => src.MapFrom(o => o.CategoryNameVm))
-                .ForMember(dest => dest.Description, src => src.MapFrom(o => o.DescriptionVm)).ReverseMap();
+                .ForMember(dest => dest.CategoryID, o => o.MapFrom(src => src.CategoryIDVm))
+                .ForMember(dest => dest.CategoryName, o => o.MapFrom(src => src.CategoryNameVm))
+                .ForMember(dest => dest.Description, o => o.MapFrom(src => src.DescriptionVm)).ReverseMap();
         }
     }
 }
