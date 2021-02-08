@@ -4,6 +4,7 @@ using FluentAssertions;
 using TelerikMvcTraining.ViewModels;
 using TelerikMvcTraining.Models;
 using AutoMapper;
+using TelerikMvcTraining.AutoMapper;
 
 namespace TelerikMvcTraining.Test
 {
@@ -11,9 +12,19 @@ namespace TelerikMvcTraining.Test
     {
         public IMapper Mapper { get; set; }
 
-        public AutomapperTest(IMapper mapper)
+        public AutomapperTest()
         {
-            Mapper = mapper;
+            if (Mapper == null)
+            {
+                var mappingConfig = new MapperConfiguration(mc =>
+                {
+                    mc.AddProfile(new ProductProfile());
+                    mc.AddProfile(new CategoryProfile());
+                });
+
+                IMapper mapper = mappingConfig.CreateMapper();
+                Mapper = mapper;
+            }
         }
 
         [Theory]
