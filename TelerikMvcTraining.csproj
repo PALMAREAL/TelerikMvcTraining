@@ -156,6 +156,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ValidatorController.cs" />
     <Compile Include="Migrations\202102021304587_AddSheduler.cs" />
     <Compile Include="Migrations\202102021304587_AddSheduler.Designer.cs">
       <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
@@ -234,7 +235,6 @@
     <Content Include="Content\img\Categories\6.jpg" />
     <Content Include="Content\img\Categories\7.jpg" />
     <Content Include="Content\img\Categories\8.jpg" />
-    <Content Include="Content\img\coming soon.jpg" />
     <Content Include="Content\img\Components\barcharts.svg" />
     <Content Include="Content\img\Components\daterangepicker.svg" />
     <Content Include="Content\img\Components\dropdownlist.svg" />
@@ -488,6 +488,7 @@
     <Content Include="Views\Scheduler\ProScheduler.cshtml" />
     <Content Include="Views\Form\BasicForm.cshtml" />
     <Content Include="Views\Form\ProForm.cshtml" />
+    <Content Include="Views\Validator\BasicValidator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
