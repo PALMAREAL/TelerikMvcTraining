@@ -8,24 +8,8 @@ using TelerikMvcTraining.AutoMapper;
 
 namespace TelerikMvcTraining.Test
 {
-    public class AutomapperTest : IDisposable
+    public class AutomapperTest : TestBase, IDisposable
     {
-        public IMapper Mapper { get; set; }
-
-        public AutomapperTest()
-        {
-            if (Mapper == null)
-            {
-                var mappingConfig = new MapperConfiguration(mc =>
-                {
-                    mc.AddProfile(new ProductProfile());
-                    mc.AddProfile(new CategoryProfile());
-                });
-
-                IMapper mapper = mappingConfig.CreateMapper();
-                Mapper = mapper;
-            }
-        }
 
         [Theory]
         [MemberData(nameof(AutomapperData.ProductVmToEntity), MemberType = typeof(AutomapperData))]
