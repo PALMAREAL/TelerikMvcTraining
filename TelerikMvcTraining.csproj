@@ -144,6 +144,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="AutoMapper\CategoryProfile.cs" />
+    <Compile Include="AutoMapper\OrderProfile.cs" />
     <Compile Include="AutoMapper\ProductProfile.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
@@ -165,8 +166,13 @@
     <Compile Include="Migrations\202102041313419_AddProScheduler.Designer.cs">
       <DependentUpon>202102041313419_AddProScheduler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102121339265_AddOrderEntity.cs" />
+    <Compile Include="Migrations\202102121339265_AddOrderEntity.Designer.cs">
+      <DependentUpon>202102121339265_AddOrderEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Meeting.cs" />
     <Compile Include="Models\MeetingAttendee.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\SchedulerMeetingService.cs" />
     <Compile Include="Services\SchedulerTaskService.cs" />
@@ -215,6 +221,7 @@
     <Compile Include="ViewModels\DetailProductViewModel.cs" />
     <Compile Include="ViewModels\FunnelSalesViewModel.cs" />
     <Compile Include="ViewModels\MeetingViewModel.cs" />
+    <Compile Include="ViewModels\OrderViewModel.cs" />
     <Compile Include="ViewModels\ProductCategoriesViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\RegionSalesViewModel.cs" />
@@ -526,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102041313419_AddProScheduler.resx">
       <DependentUpon>202102041313419_AddProScheduler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102121339265_AddOrderEntity.resx">
+      <DependentUpon>202102121339265_AddOrderEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

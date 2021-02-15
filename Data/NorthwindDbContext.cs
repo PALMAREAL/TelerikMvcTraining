@@ -25,5 +25,7 @@ namespace TelerikMvcTraining.Data
         public DbSet<Meeting> Meetings { get; set; }
 
         public DbSet<MeetingAttendee> MeetingAttendees { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
     }
 }
