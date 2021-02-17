@@ -5,11 +5,20 @@ using TelerikMvcTraining.ViewModels;
 using TelerikMvcTraining.Models;
 using AutoMapper;
 using TelerikMvcTraining.AutoMapper;
+using TelerikMvcTraining.Dtos;
 
 namespace TelerikMvcTraining.Test
 {
     public class AutomapperTest : TestBase, IDisposable
     {
+
+        [Theory]
+        [MemberData(nameof(AutomapperData.VmToEntity), MemberType = typeof(AutomapperData))]
+        public void MappingEntityViewModelSuccess(ViewModel<Entity> entityViewModel, Entity expected)
+        {
+            var result = Mapper.Map<Entity>(entityViewModel);
+            result.Should().Equals(expected);
+        }
 
         [Theory]
         [MemberData(nameof(AutomapperData.ProductVmToEntity), MemberType = typeof(AutomapperData))]
@@ -51,11 +60,31 @@ namespace TelerikMvcTraining.Test
         }
 
         [Theory]
-        [MemberData(nameof(AutomapperData.VmToEntity), MemberType = typeof(AutomapperData))]
-        public void MappingEntityViewModelSuccess(ViewModel<Entity> entityViewModel, Entity expected)
+        [MemberData(nameof(AutomapperData.AddressToAddressDto), MemberType = typeof(AutomapperData))]
+        public void MappingAddressDtoSuccess(Address address, AddressDto expected)
         {
-            var result = Mapper.Map<Entity>(entityViewModel);
-            result.Should().Equals(expected);
+            AddressDto result = Mapper.Map<AddressDto>(address);
+
+            result.Ciudad.Should().Be(expected.Ciudad);
+
+            result.Estado.Should().Be(expected.Estado);
+
+            result.País.Should().Be(expected.País);
+        }
+
+        [Theory]
+        [MemberData(nameof(AutomapperData.EmployeeDtoToEmployee), MemberType = typeof(AutomapperData))]
+        public void MappingEmployeeSuccess(EmployeeDto employeeDto, Employee expected)
+        {
+            Employee result = Mapper.Map<Employee>(employeeDto);
+
+            result.Name.Should().Be(expected.Name);
+
+            result.Salary.Should().Be(expected.Salary);
+
+            result.Department.Should().Be(expected.Department);
+
+            result.Address.Should().Be(expected.Address);
         }
 
         public void Dispose()

@@ -143,7 +143,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AutoMapper\AddressProfile.cs" />
     <Compile Include="AutoMapper\CategoryProfile.cs" />
+    <Compile Include="AutoMapper\EmployeeProfile.cs" />
     <Compile Include="AutoMapper\OrderProfile.cs" />
     <Compile Include="AutoMapper\ProductDetailProfile.cs" />
     <Compile Include="AutoMapper\ProductProfile.cs" />

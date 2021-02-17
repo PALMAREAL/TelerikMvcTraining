@@ -17,6 +17,8 @@ namespace TelerikMvcTraining.Test
                 cfg.AddProfile(new ProductProfile());
                 cfg.AddProfile(new CategoryProfile());
                 cfg.AddProfile(new OrderProfile());
+                cfg.AddProfile(new AddressProfile());
+                cfg.AddProfile(new EmployeeProfile());
             });
 
             Mapper = config.CreateMapper();

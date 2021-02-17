@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TelerikMvcTraining.Dtos;
 using TelerikMvcTraining.Models;
 using TelerikMvcTraining.ViewModels;
 
@@ -156,6 +157,67 @@ namespace TelerikMvcTraining.Test
                 }
 
            };
+
+        public static IEnumerable<object[]> AddressToAddressDto =>
+           new List<object[]>
+           {
+                new object[]{
+                    new Address()
+                    {
+                        City = "Miami",
+                        State = "Florida",
+                        Country = new Country{CountryID = 1, CountryNameLong = "Unites States", CountryNameShort = "USA"}
+                    },
+                    new AddressDto()
+                    {
+                        Ciudad = "Miami",
+                        Estado = "Florida",
+                        País = new Country{CountryID = 1, CountryNameLong = "Unites States", CountryNameShort = "USA"}
+                    }
+                }
+           };
+
+        public static IEnumerable<object[]> EmployeeDtoToEmployee =>
+         new List<object[]>
+         {
+                new object[]{
+                    new EmployeeDto()
+                    {
+                        Name = "George",
+                        Salary = 1200,
+                        Department = "Finance",
+                        Address = new AddressDto
+                        {
+                            Ciudad = "Las Palmas",
+                            Estado = "Gran Canaria",
+                            País = new Country
+                            {
+                                CountryID = 1,
+                                CountryNameLong = "España",
+                                CountryNameShort = "Es"
+                            }
+                        }
+                    },
+
+                    new Employee()
+                    {
+                        Name = "George",
+                        Salary = 1200,
+                        Department = "Finance",
+                        Address = new Address
+                        {
+                            City = "Las Palmas",
+                            State = "Gran Canaria",
+                            Country = new Country
+                            {
+                                CountryID = 1,
+                                CountryNameLong = "España",
+                                CountryNameShort = "Es"
+                            }
+                        }
+                    }
+                }
+         };
 
         public static IEnumerable<object[]> VmToEntity =>
            new List<object[]>
