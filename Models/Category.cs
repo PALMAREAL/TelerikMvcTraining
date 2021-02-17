@@ -10,16 +10,15 @@ namespace TelerikMvcTraining.Models
 
         public string Description { get; set; }
 
-        public byte[] Picture { get; set; }
+        public int Picture { get; set; }
 
-        
         public override bool Equals(object obj)
         {
             return obj is Category category &&
                    CategoryID == category.CategoryID &&
                    CategoryName == category.CategoryName &&
                    Description == category.Description &&
-                   EqualityComparer<byte[]>.Default.Equals(Picture, category.Picture);
+                   Picture == category.Picture;
         }
 
         public override int GetHashCode()
@@ -28,7 +27,7 @@ namespace TelerikMvcTraining.Models
             hashCode = hashCode * -1521134295 + CategoryID.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(CategoryName);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Description);
-            hashCode = hashCode * -1521134295 + EqualityComparer<byte[]>.Default.GetHashCode(Picture);
+            hashCode = hashCode * -1521134295 + Picture.GetHashCode();
             return hashCode;
         }
     }

@@ -14,7 +14,7 @@ namespace TelerikMvcTraining.ViewModels
 
         public string DescriptionVm { get; set; }
 
-        public byte[] PictureVm { get; set; }
+        public int PictureVm { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -22,7 +22,7 @@ namespace TelerikMvcTraining.ViewModels
                    CategoryIDVm == model.CategoryIDVm &&
                    CategoryNameVm == model.CategoryNameVm &&
                    DescriptionVm == model.DescriptionVm &&
-                   EqualityComparer<byte[]>.Default.Equals(PictureVm, model.PictureVm);
+                   PictureVm == model.PictureVm;
         }
 
         public override int GetHashCode()
@@ -31,7 +31,7 @@ namespace TelerikMvcTraining.ViewModels
             hashCode = hashCode * -1521134295 + CategoryIDVm.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(CategoryNameVm);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(DescriptionVm);
-            hashCode = hashCode * -1521134295 + EqualityComparer<byte[]>.Default.GetHashCode(PictureVm);
+            hashCode = hashCode * -1521134295 + PictureVm.GetHashCode();
             return hashCode;
         }
     }
