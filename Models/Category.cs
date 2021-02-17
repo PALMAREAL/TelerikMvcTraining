@@ -10,7 +10,7 @@ namespace TelerikMvcTraining.Models
 
         public string Description { get; set; }
 
-        public int Picture { get; set; }
+        public int? Picture { get; set; }
 
         public override bool Equals(object obj)
         {
