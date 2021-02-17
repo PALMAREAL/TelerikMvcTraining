@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using System;
 using TelerikMvcTraining.AutoMapper;
+using TelerikMvcTraining.Models;
+using TelerikMvcTraining.ViewModels;
 
 namespace TelerikMvcTraining.Test
 {
@@ -9,13 +12,14 @@ namespace TelerikMvcTraining.Test
 
         public TestBase()
         {
-            var mapperConfiguration = new MapperConfiguration(cfg =>
+            var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new ProductProfile());
                 cfg.AddProfile(new CategoryProfile());
+                cfg.AddProfile(new OrderProfile());
             });
 
-            Mapper = mapperConfiguration.CreateMapper();
+            Mapper = config.CreateMapper();
         }
     }
 }

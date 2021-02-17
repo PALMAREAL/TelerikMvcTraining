@@ -34,12 +34,27 @@ namespace TelerikMvcTraining.Test
         }
 
         [Theory]
+        [MemberData(nameof(AutomapperData.OrderViewModelToEntity), MemberType = typeof(AutomapperData))]
+        public void MappingOrderSuccess(OrderViewModel orderViewModel, Order expected)
+        {
+            Order result = Mapper.Map<Order>(orderViewModel);
+
+            result.OrderID.Should().Be(expected.OrderID);
+
+            result.OrderDate.Should().Be(expected.OrderDate);
+
+            result.CustomerID.Should().Be(expected.CustomerID);
+
+            result.Category.Should().Be(expected.Category);
+
+            result.Country.Should().Be(expected.Country);
+        }
+
+        [Theory]
         [MemberData(nameof(AutomapperData.VmToEntity), MemberType = typeof(AutomapperData))]
         public void MappingEntityViewModelSuccess(ViewModel<Entity> entityViewModel, Entity expected)
         {
             var result = Mapper.Map<Entity>(entityViewModel);
-
-            // Override Equals an Hashcode in Category and Product
             result.Should().Equals(expected);
         }
 

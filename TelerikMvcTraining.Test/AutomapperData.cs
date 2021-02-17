@@ -73,6 +73,51 @@ namespace TelerikMvcTraining.Test
 
             };
 
+        public static IEnumerable<object[]> OrderViewModelToEntity =>
+            new List<object[]>
+            {
+                new object[]{
+                    new OrderViewModel()
+                    {
+                        IdOrden = 1,
+                        ClienteId = 1080,
+                        FechaCompra = new DateTime(2021,02,10),
+                        Categoría = new Category()
+                        {
+                            CategoryID = 1,
+                            CategoryName = "Bevarages",
+                            Description = "Está buena",
+                            Picture = 123456
+                        },
+                        País = new Country
+                        {
+                            CountryID = 1,
+                            CountryNameLong = "Cuba",
+                            CountryNameShort = "Cu"
+                        }
+                    },
+                    new Order()
+                    {
+                        OrderID = 1,
+                        CustomerID = 1080,
+                        OrderDate = new DateTime(2021,02,10),
+                        Category = new Category()
+                        {
+                            CategoryID = 1,
+                            CategoryName = "Bevarages",
+                            Description = "Está buena",
+                            Picture = 123456
+                        },
+                        Country = new Country
+                        {
+                            CountryID = 1,
+                            CountryNameLong = "Cuba",
+                            CountryNameShort = "Cu"
+                        }
+                    }
+                }
+            };
+
         public static IEnumerable<object[]> CategoryVmToEntity =>
            new List<object[]>
            {
@@ -82,14 +127,14 @@ namespace TelerikMvcTraining.Test
                         CategoryIDVm = 1,
                         CategoryNameVm  = "Bevarages",
                         DescriptionVm  = "Está buena",
-                        PictureVm  = new byte[]{ 1 }
+                        PictureVm  = 123
                     },
                     new Category()
                     {
                         CategoryID = 1,
                         CategoryName = "Bevarages",
                         Description = "Está buena",
-                        Picture = new byte[]{ 1 }
+                        Picture = 123
                     }
                 },
 
@@ -99,14 +144,14 @@ namespace TelerikMvcTraining.Test
                         CategoryIDVm = 2,
                         CategoryNameVm  = "Cerveza",
                         DescriptionVm  = "Está rica",
-                        PictureVm  = new byte[]{ 2 }
+                        PictureVm  = 456
                     },
                     new Category()
                     {
                         CategoryID = 2,
                         CategoryName = "Cerveza",
                         Description = "Está rica",
-                        Picture = new byte[]{ 2 }
+                        Picture = 456
                     }
                 }
 
@@ -121,14 +166,14 @@ namespace TelerikMvcTraining.Test
                         CategoryIDVm = 1,
                         CategoryNameVm  = "Bevarages",
                         DescriptionVm  = "Está buena",
-                        PictureVm  = new byte[]{ 1 }
+                        PictureVm  = 357
                     },
                     new Category()
                     {
                         CategoryID = 1,
                         CategoryName = "Bevarages",
                         Description = "Está buena",
-                        Picture = new byte[]{ 1 }
+                        Picture = 357
                     }
                 },
 
@@ -159,8 +204,24 @@ namespace TelerikMvcTraining.Test
                         UnitPrice = 5,
                         UnitsOnOrder = 2
                     }
-                }
+                },
 
+                new object[]{
+                    new CategoryViewModel()
+                    {
+                        CategoryIDVm = 1,
+                        CategoryNameVm  = "Bevarages",
+                        DescriptionVm  = "Está buena",
+                        PictureVm  = 123
+                    },
+                    new Category()
+                    {
+                        CategoryID = 1,
+                        CategoryName = "Bevarages",
+                        Description = "Está buena",
+                        Picture = 123
+                    }
+                }
            };
     }
 }
