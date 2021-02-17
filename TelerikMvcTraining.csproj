@@ -159,6 +159,7 @@
     <Compile Include="Controllers\PickerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ValidatorController.cs" />
+    <Compile Include="Dtos\EmployeeDto.cs" />
     <Compile Include="Migrations\202102021304587_AddSheduler.cs" />
     <Compile Include="Migrations\202102021304587_AddSheduler.Designer.cs">
       <DependentUpon>202102021304587_AddSheduler.cs</DependentUpon>
@@ -175,6 +176,8 @@
     <Compile Include="Migrations\202102171355522_CategoryModelModify.Designer.cs">
       <DependentUpon>202102171355522_CategoryModelModify.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Meeting.cs" />
     <Compile Include="Models\MeetingAttendee.cs" />
     <Compile Include="Models\Order.cs" />
@@ -219,6 +222,7 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Dtos\AddressDto.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\CountryViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
