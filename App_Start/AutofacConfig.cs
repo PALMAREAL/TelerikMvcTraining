@@ -1,30 +1,26 @@
-﻿
-using Autofac;
+﻿using Autofac;
 using Autofac.Integration.Mvc;
-using AutoMapper;
-using AutoMapper.Contrib.Autofac.DependencyInjection;
 using System.Web.Mvc;
-using TelerikMvcTraining.AutoMapper;
 using TelerikMvcTraining.Data;
 using TelerikMvcTraining.Data.Repositories;
 using TelerikMvcTraining.Services;
 
 namespace TelerikMvcTraining.App_Start
 {
-    public static class AutofacContainer 
+    public static class AutofacConfig
     {
-        public static IMapper Mapper { get; set; }
-
-        public static void Configure()
+        public static void IoCResolve()
         {
             var builder = new ContainerBuilder();
 
             builder.RegisterType<NorthwindDbContext>().InstancePerRequest();
 
-            // By DI with pluggin AutoMapper.Contrib.Autofac.DependencyInjection
-            //builder.RegisterAutoMapper(typeof(MvcApplication).Assembly);
-
+            // Register your MVC controllers. (MvcApplication is the name of
+            // the class in Global.asax.)
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            //Register AutoMapper here using AutoFacModule class (Both methods works)
+            builder.RegisterModule<AutoFacModule>();
 
             builder.RegisterType<ProductService>().As<IProductService>();
 
@@ -34,24 +30,10 @@ namespace TelerikMvcTraining.App_Start
 
             builder.RegisterType<ProductRepositoryMock>().As<IProductRepository>();
 
-            MapperConfig();
-
-            builder.Register(c => Mapper).As<IMapper>().SingleInstance();
-
+            // Set the dependency resolver to be Autofac.
             var container = builder.Build();
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-        }
-
-        private static void MapperConfig()
-        {
-            var mapperConfiguration = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new ProductProfile());
-                cfg.AddProfile(new CategoryProfile());
-            });
-
-            Mapper = mapperConfiguration.CreateMapper();
-        }
+        }  
     }
 }
