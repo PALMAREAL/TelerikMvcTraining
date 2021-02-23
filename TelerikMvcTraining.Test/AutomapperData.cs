@@ -215,9 +215,138 @@ namespace TelerikMvcTraining.Test
                                 CountryNameShort = "Es"
                             }
                         }
+
                     }
                 }
          };
+
+        public static IEnumerable<object[]> EmployeeViewModelToEntity =>
+            new List<object[]>
+            {
+                new object[]{
+
+                    new EmployeeViewModel()
+                    {
+                        EmployeeID = 123,
+                        Nombre = "George",
+                        Salario = 1200,
+                        Departmento = "Finance",
+                        Dirección = new Address
+                        {
+                            City = "Las Palmas",
+                            State = "Gran Canaria",
+                            Country = new Country
+                            {
+                                CountryID = 1,
+                                CountryNameLong = "España",
+                                CountryNameShort = "Es"
+                            }
+                        },
+                        Pedidos= new List<Order>
+                        {
+                            new Order
+                            {
+                                OrderID = 4,
+                                OrderDate = new DateTime(2021,01, 24),
+                                CustomerID = 1024,
+                                Category = new Category
+                                {
+                                    CategoryID = 1,
+                                    CategoryName = "Salsas",
+                                    Description = "Con queso",
+                                    Picture = 10
+                                },
+                                Country = new Country
+                                {
+                                    CountryID = 1,
+                                    CountryNameLong = "España",
+                                    CountryNameShort = "Es"
+                                }
+                            },
+
+                            new Order
+                            {
+                                OrderID = 2,
+                                OrderDate = new DateTime(2021,12, 24),
+                                CustomerID = 1080,
+                                Category = new Category
+                                {
+                                    CategoryID = 4,
+                                    CategoryName = "Vinos",
+                                    Description = "Rioja",
+                                    Picture = 22
+                                },
+                                Country = new Country
+                                {
+                                    CountryID = 5,
+                                    CountryNameLong = "Francia",
+                                    CountryNameShort = "Fr"
+                                }
+                            }
+                        }
+                    },
+
+                    new Employee()
+                    {
+                        EmployeeID = 123,
+                        Name = "George",
+                        Salary = 1200,
+                        Department = "Finance",
+                        Address = new Address
+                        {
+                            City = "Las Palmas",
+                            State = "Gran Canaria",
+                            Country = new Country
+                            {
+                                CountryID = 1,
+                                CountryNameLong = "España",
+                                CountryNameShort = "Es"
+                            }
+                        },
+                        Orders = new List<Order>
+                        {
+                            new Order
+                            {
+                                OrderID = 1,
+                                OrderDate = new DateTime(2021,01, 24),
+                                CustomerID = 1024,
+                                Category = new Category
+                                {
+                                    CategoryID = 1,
+                                    CategoryName = "Salsas",
+                                    Description = "Con queso",
+                                    Picture = 10
+                                },
+                                Country = new Country
+                                {
+                                    CountryID = 1,
+                                    CountryNameLong = "España",
+                                    CountryNameShort = "Es"
+                                }
+                            },
+                            new Order
+                            {
+                                OrderID = 2,
+                                OrderDate = new DateTime(2021,12, 24),
+                                CustomerID = 1080,
+                                Category = new Category
+                                {
+                                    CategoryID = 4,
+                                    CategoryName = "Vinos",
+                                    Description = "Rioja",
+                                    Picture = 22
+                                },
+                                Country = new Country
+                                {
+                                    CountryID = 5,
+                                    CountryNameLong = "Francia",
+                                    CountryNameShort = "Fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            };
 
         public static IEnumerable<object[]> VmToEntity =>
            new List<object[]>

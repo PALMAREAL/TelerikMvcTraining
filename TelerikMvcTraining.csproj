@@ -147,6 +147,7 @@
     <Compile Include="AutoMapper\AddressProfile.cs" />
     <Compile Include="AutoMapper\CategoryProfile.cs" />
     <Compile Include="AutoMapper\EmployeeProfile.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="AutoMapper\OrderProfile.cs" />
     <Compile Include="AutoMapper\ProductDetailProfile.cs" />
     <Compile Include="AutoMapper\ProductProfile.cs" />
@@ -295,6 +296,7 @@
     <Content Include="Content\img\Gradients\Vicious Stance.png" />
     <Content Include="Content\img\Gradients\Warm Flame.png" />
     <Content Include="Content\img\Gradients\Winter Neva.png" />
+    <Content Include="Content\img\Logo\TelerikTraining.png" />
     <Content Include="Content\img\Organization\001-account.svg" />
     <Content Include="Content\img\Organization\002-balance sheet.svg" />
     <Content Include="Content\img\Organization\003-conference.svg" />

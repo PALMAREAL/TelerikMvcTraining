@@ -11,7 +11,11 @@ namespace TelerikMvcTraining.Test
 {
     public class AutomapperTest : TestBase, IDisposable
     {
-
+        /// <summary>
+        /// Generic Mapping Entity to ViewModel.
+        /// </summary>
+        /// <param name="entityViewModel"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData(nameof(AutomapperData.VmToEntity), MemberType = typeof(AutomapperData))]
         public void MappingEntityViewModelSuccess(ViewModel<Entity> entityViewModel, Entity expected)
@@ -20,6 +24,11 @@ namespace TelerikMvcTraining.Test
             result.Should().Equals(expected);
         }
 
+        /// <summary>
+        /// Mapping ProductViewModel to Product.
+        /// </summary>
+        /// <param name="productViewModel"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData(nameof(AutomapperData.ProductVmToEntity), MemberType = typeof(AutomapperData))]
         public void MappingProductSuccess(ProductViewModel productViewModel, Product expected)
@@ -31,6 +40,11 @@ namespace TelerikMvcTraining.Test
             result.ProductName.Should().Be(expected.ProductName);
         }
 
+        /// <summary>
+        /// Mapping CategoryViewModel to Cagegory. 
+        /// </summary>
+        /// <param name="categoryViewModel"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData(nameof(AutomapperData.CategoryVmToEntity), MemberType = typeof(AutomapperData))]
         public void MappingCategorySuccess(CategoryViewModel categoryViewModel, Category expected)
@@ -42,6 +56,11 @@ namespace TelerikMvcTraining.Test
             result.Description.Should().Be(expected.Description);
         }
 
+        /// <summary>
+        /// Mapping OrderViewModel to Order.
+        /// </summary>
+        /// <param name="orderViewModel"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData(nameof(AutomapperData.OrderViewModelToEntity), MemberType = typeof(AutomapperData))]
         public void MappingOrderSuccess(OrderViewModel orderViewModel, Order expected)
@@ -59,6 +78,11 @@ namespace TelerikMvcTraining.Test
             result.Country.Should().Be(expected.Country);
         }
 
+        /// <summary>
+        /// Mapping Address entity to AddressDto.
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData(nameof(AutomapperData.AddressToAddressDto), MemberType = typeof(AutomapperData))]
         public void MappingAddressDtoSuccess(Address address, AddressDto expected)
@@ -72,6 +96,11 @@ namespace TelerikMvcTraining.Test
             result.País.Should().Be(expected.País);
         }
 
+        /// <summary>
+        /// Mapping EmployeeDto to Employee.
+        /// </summary>
+        /// <param name="employeeDto"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData(nameof(AutomapperData.EmployeeDtoToEmployee), MemberType = typeof(AutomapperData))]
         public void MappingEmployeeSuccess(EmployeeDto employeeDto, Employee expected)
@@ -85,6 +114,24 @@ namespace TelerikMvcTraining.Test
             result.Department.Should().Be(expected.Department);
 
             result.Address.Should().Be(expected.Address);
+        }
+
+        /// <summary>
+        /// Mapping EmployeViewModel to Employee.
+        /// </summary>
+        /// <param name="employeeVm"></param>
+        /// <param name="expected"></param>
+        [Theory]
+        [MemberData(nameof(AutomapperData.EmployeeViewModelToEntity), MemberType = typeof(AutomapperData))]
+        public void MappingEmployeeViewModelSuccess(EmployeeViewModel employeeVm, Employee expected)
+        {
+            Employee result = Mapper.Map<Employee>(employeeVm);
+
+            result.EmployeeID.Should().Be(expected.EmployeeID);
+
+            result.Address.Equals(expected.Address);
+
+            result.Orders.Equals(expected.Orders);
         }
 
         public void Dispose()

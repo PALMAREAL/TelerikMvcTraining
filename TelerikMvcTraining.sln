@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikMvcTraining", "TelerikMvcTraining.csproj", "{83EB2675-9E0C-46ED-8F11-6D34B798A569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikMvcTraining.Test", "TelerikMvcTraining.Test\TelerikMvcTraining.Test.csproj", "{56A9BB57-4D3B-4568-8474-AC1283F4BE81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelerikMvcTraining.Test", "TelerikMvcTraining.Test\TelerikMvcTraining.Test.csproj", "{56A9BB57-4D3B-4568-8474-AC1283F4BE81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
