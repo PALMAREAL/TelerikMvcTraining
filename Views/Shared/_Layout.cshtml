@@ -13,6 +13,12 @@
         font-family: 'Playball', cursive;
         color: #701f9a;
     }
+
+    .k-menu:not(.k-context-menu) {
+        border-color: #dee2e6;
+        color: #212529;
+        background-color: transparent !important;
+    }
 </style>
 
 <html>
@@ -40,18 +46,21 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button id="configure" class="k-rpanel-toggle k-button btn-toggle"><span class="k-icon k-i-menu"></span></button>
-                @Html.ActionLink("TelerikTraining", "Index", "Home", new { area = "" }, new { @class = "navbar-brand-title" })
+                @*@Html.ActionLink("TelerikTraining", "Index", "Home", new { area = "" }, new { @class = "navbar-brand-title" })*@
+                <a href="http://localhost:55074/Home">
+                    <img class="logo" src="~/Content/img/Logo/TelerikTraining.png" alt=""><img />
+                </a>
             </div>
             <div id="responsive-panel" class="navbar-left">
                 @(Html.Kendo().Menu()
-                        .Name("Menu")
-                        .Items(items =>
-                        {
-                            items.Add().Text("Home").Action("Index", "Home", new { area = "" });
-                            items.Add().Text("About").Action("About", "Home", new { area = "" });
-                            items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
-                        })
-                    )
+                .Name("Menu")
+                .Items(items =>
+                {
+                    items.Add().Text("Home").Action("Index", "Home", new { area = "" });
+                    items.Add().Text("About").Action("About", "Home", new { area = "" });
+                    items.Add().Text("Contact").Action("Contact", "Home", new { area = "" });
+                })
+                )
             </div>
         </div>
     </nav>
