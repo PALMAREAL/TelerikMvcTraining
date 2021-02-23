@@ -11,9 +11,11 @@ namespace TelerikMvcTraining.Data.Repositories
 {
     public class ProductRepository : Repository<Product> , IProductRepository
     {
+        public NorthwindDbContext DbContext { get; set; }
 
         public ProductRepository(NorthwindDbContext dbContext) : base(dbContext)
         {
+            DbContext = dbContext;
         }
 
         public Product GetByCategory(int categoryID)
@@ -28,7 +30,9 @@ namespace TelerikMvcTraining.Data.Repositories
 
         public IEnumerable GetAllProducts()
         {
-            throw new NotImplementedException();
+            IQueryable<Product> products = DbContext.Products;
+
+            return (products.Select(p => p.ProductID)).ToList();
         }
 
         public IEnumerable GetAllDetailsProducts()
